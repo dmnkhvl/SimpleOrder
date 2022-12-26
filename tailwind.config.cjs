@@ -6,6 +6,10 @@ module.exports = {
       fontFamily: {
         sans: ["SF Pro Display", "sans-serif"],
       },
+      colors: {
+        dark: "#0B0E11",
+        white: "#DEE3EA",
+      },
     },
   },
   plugins: [],
