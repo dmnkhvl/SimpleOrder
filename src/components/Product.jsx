@@ -1,7 +1,7 @@
 import React from "react";
 import { BiTrash as Delete } from "react-icons/bi";
 
-function Product({4 name, price, amount, discount, onClick }) {
+function Product({ name, price, amount, discount, onClick }) {
   return (
     <div className="mx-auto w-full pb-8 border-b border-lightGray">
       <div className="mt-4 text-mdGray">

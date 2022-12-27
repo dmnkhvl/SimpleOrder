@@ -10,6 +10,9 @@ function App() {
   const [discount, setDiscount] = useState(0);
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(false);
+  const [subtotal, setSubTotal] = useState(0);
+  const [totalDiscount, setTotalDiscount] = useState(0);
+  const [total, setTotal] = useState(0);
 
   const handleClick = (e) => {
     if (name.length == 0 || price <= 0 || amount <= 0 || discount < 0) {
@@ -26,6 +29,7 @@ function App() {
         },
       ]);
       setError(false);
+      setSubTotal(subtotal + parseInt(price));
     }
   };
 
@@ -166,7 +170,7 @@ function App() {
                     w/o VAT
                   </p>
                 </div>
-                <p>0€</p>
+                <p>{subtotal}€</p>
               </div>
               <div className="flex items-center justify-between mt-1">
                 <p>Total discount</p>
@@ -174,13 +178,14 @@ function App() {
               </div>
               <div className="flex items-center justify-between mt-10">
                 <p className="font-medium text-xl">Total</p>
-                <p className="font-medium text-xl text-speci">0€</p>
+                <p className="font-medium text-xl text-speci">{total}€</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {console.log(products)}
+      {console.log(typeof total)}
+      {console.log(typeof price)}
     </div>
   );
 }
