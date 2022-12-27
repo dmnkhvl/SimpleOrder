@@ -9,10 +9,9 @@ function App() {
   const [amount, setAmount] = useState(0);
   const [discount, setDiscount] = useState(0);
   const [products, setProducts] = useState([]);
-
   return (
     <div className="App">
-      <div className="bg-dark text-white min-h-screen">
+      <div className="bg-white text-black min-h-screen">
         <div className="mx-auto max-w-screen-xl pt-10	">
           <div className="mx-auto max-w-screen-sm bg-gray rounded-xl ">
             <div className="flex flex-col p-5 gap-2 mx-auto text-darkGray shadow-sm mb-10 ">
@@ -113,15 +112,10 @@ function App() {
                     price={product.price}
                     amount={product.amount}
                     discount={product.discount}
-                  />
-                  <button
                     onClick={() => {
                       setProducts(products.filter((p) => p.id !== product.id));
                     }}
-                    className="mt-6 px-10 py-2 font-medium text-xs  mx-auto rounded-xl bg-special text-white"
-                  >
-                    Delete
-                  </button>
+                  />
                 </div>
               ))}
             </div>

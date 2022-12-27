@@ -1,11 +1,11 @@
 import React from "react";
 
-function Product({ name, price, amount, discount }) {
+function Product({ name, price, amount, discount, onClick }) {
   return (
-    <div className="mx-auto text-white w-full">
+    <div className="mx-auto w-full pb-8 border-b border-lightGray">
       <div className="mt-4">
         <div className="flex justify-between items-center">
-          <p className="font-bold text-lg">{name}</p>
+          <p className="font-bold text-lg text-black">{name}</p>
           <div className="flex items-center">
             <p className="font-normal text-sm">{price}€ per piece</p>
             <p className="text-xs font-normal text-special ml-2 "> w/o VAT</p>
@@ -40,15 +40,23 @@ function Product({ name, price, amount, discount }) {
             <p className="text-xs font-normal text-special ml-2 ">w/o VAT</p>
           </div>
         </div>
-        <p className="flex justify-center mt-4 font-semibold text-2xl">
-          <span className="text-special mr-2">
-            {Math.round(
-              (price * amount - price * amount * (discount / 100)) * 1.2 * 100
-            ) / 100}
-            €
-          </span>
-          total
-        </p>
+        <div className="flex justify-between items-center mt-4">
+          <button
+            onClick={onClick}
+            className="px-10 py-2 font-medium text-xs rounded-xl bg-special text-white"
+          >
+            Delete
+          </button>
+          <p className="flex justify-center  font-semibold text-2xl">
+            <span className="text-special mr-2">
+              {Math.round(
+                (price * amount - price * amount * (discount / 100)) * 1.2 * 100
+              ) / 100}
+              €
+            </span>
+            total
+          </p>
+        </div>
       </div>
     </div>
   );
