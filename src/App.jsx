@@ -30,6 +30,7 @@ function App() {
       ]);
       setError(false);
       setSubTotal(subtotal + parseInt(price));
+      setTotal(total + parseInt(price) * 1.2);
     }
   };
 
@@ -157,6 +158,7 @@ function App() {
                     onClick={() => {
                       setProducts(products.filter((p) => p.id !== product.id));
                       setSubTotal(subtotal - parseInt(product.price));
+                      setTotal(total - parseInt(product.price) * 1.2);
                     }}
                   />
                 </div>
