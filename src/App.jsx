@@ -156,6 +156,7 @@ function App() {
                     discount={product.discount}
                     onClick={() => {
                       setProducts(products.filter((p) => p.id !== product.id));
+                      setSubTotal(subtotal - parseInt(product.price));
                     }}
                   />
                 </div>
@@ -184,8 +185,6 @@ function App() {
           </div>
         </div>
       </div>
-      {console.log(typeof total)}
-      {console.log(typeof price)}
     </div>
   );
 }
