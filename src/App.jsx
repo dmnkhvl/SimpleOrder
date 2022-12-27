@@ -105,13 +105,23 @@ function App() {
 
           <div className="p-10 grid grid-flow-col gap-x-5 overflow-scroll">
             {products.map((product) => (
-              <Product
-                key={product.id}
-                name={product.name}
-                price={product.price}
-                amount={product.amount}
-                discount={product.discount}
-              />
+              <div>
+                <Product
+                  key={product.id}
+                  name={product.name}
+                  price={product.price}
+                  amount={product.amount}
+                  discount={product.discount}
+                />
+                <button
+                  onClick={() => {
+                    setProducts(products.filter((p) => p.id !== product.id));
+                  }}
+                  className="mt-10 px-10 py-2 font-medium text-xs  mx-auto rounded-xl bg-special text-white"
+                >
+                  Delete
+                </button>
+              </div>
             ))}
           </div>
         </div>
