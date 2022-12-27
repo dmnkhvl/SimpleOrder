@@ -4,6 +4,8 @@ SPA, that allows user to create products, add them to shopping cart and see the 
 
 Build with [React](https://reactjs.org/) and [Tailwind CSS](https://tailwindcss.com/).
 
+The app is publicly available on [order.dmnkhvl.eu](https://order.dmnkhvl.eu/)
+
 ## First time installation
 
 ### Install latest [Node.js](https://nodejs.org/en/)
