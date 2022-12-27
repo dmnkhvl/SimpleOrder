@@ -9,14 +9,25 @@ function App() {
   const [amount, setAmount] = useState(0);
   const [discount, setDiscount] = useState(0);
   const [products, setProducts] = useState([]);
-  const [error, setError] = useState(false);
   const [subtotal, setSubTotal] = useState(0);
   const [totalDiscount, setTotalDiscount] = useState(0);
   const [total, setTotal] = useState(0);
+  const [wrongName, setWrongName] = useState(false);
+  const [wrongPrice, setWrongPrice] = useState(false);
+  const [wrongAmount, setWrongAmount] = useState(false);
+  const [wrongDiscount, setWrongDiscount] = useState(false);
 
   const handleClick = (e) => {
-    if (name.length == 0 || price <= 0 || amount <= 0 || discount < 0) {
-      setError(true);
+    if (name.length == 0) {
+      setWrongName(true);
+    }
+    if (price <= 0) {
+      setWrongPrice(true);
+    }
+    if (amount <= 0) {
+      setWrongAmount(true);
+    } else if (discount < 0 || discount > 100) {
+      setWrongDiscount(true);
     } else {
       setProducts([
         ...products,
@@ -28,7 +39,10 @@ function App() {
           discount: discount,
         },
       ]);
-      setError(false);
+      setWrongName(false);
+      setWrongPrice(false);
+      setWrongAmount(false);
+      setWrongDiscount(false);
       setSubTotal(subtotal + parseInt(price));
       setTotal(total + parseInt(price) * 1.2);
     }
@@ -54,8 +68,8 @@ function App() {
                   className="mt-1 w-4/6	rounded-md shadow-sm border-lightGray bg-white text-black sm:text-s"
                 />
               </div>
-              {error ? (
-                <p className="text-white text-sm py-2 bg-red-500 rounded-xl text-center">
+              {wrongName ? (
+                <p className="mt-1 font-medium text-xs text-special mr-2 text-right">
                   Product name can't be empty
                 </p>
               ) : (
@@ -74,8 +88,8 @@ function App() {
                     placeholder="100€"
                     className="mt-1 rounded-md shadow-sm border-lightGray bg-white text-black sm:text-s"
                   />
-                  {error ? (
-                    <p className=" mt-2 py-2 text-xs text-white bg-red-500 rounded-xl text-center">
+                  {wrongPrice ? (
+                    <p className="mt-1 font-medium text-xs text-special ml-2">
                       Invalid value
                     </p>
                   ) : (
@@ -94,8 +108,8 @@ function App() {
                     placeholder="0"
                     className="mt-1 rounded-md shadow-sm border-lightGray bg-white text-black sm:text-s"
                   />
-                  {error ? (
-                    <p className=" mt-2 py-2 text-xs text-white bg-red-500 rounded-xl text-center">
+                  {wrongAmount ? (
+                    <p className="mt-1 font-medium text-xs text-special ml-2">
                       Invalid value
                     </p>
                   ) : (
@@ -117,8 +131,8 @@ function App() {
                     placeholder="10%"
                     className="mt-1 rounded-md shadow-sm border-lightGray bg-white text-black sm:text-s"
                   />
-                  {error ? (
-                    <p className=" mt-2 py-2 text-xs text-white bg-red-500 rounded-xl text-center">
+                  {wrongDiscount ? (
+                    <p className="mt-1 font-medium text-xs text-special ml-2">
                       Invalid value
                     </p>
                   ) : (
