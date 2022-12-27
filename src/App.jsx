@@ -9,13 +9,15 @@ function App() {
   const [amount, setAmount] = useState(0);
   const [discount, setDiscount] = useState(0);
   const [products, setProducts] = useState([]);
-  const [subtotal, setSubTotal] = useState(0);
+  const [subtotal, setSubtotal] = useState(0);
   const [totalDiscount, setTotalDiscount] = useState(0);
   const [total, setTotal] = useState(0);
   const [wrongName, setWrongName] = useState(false);
   const [wrongPrice, setWrongPrice] = useState(false);
   const [wrongAmount, setWrongAmount] = useState(false);
   const [wrongDiscount, setWrongDiscount] = useState(false);
+  const [withouVat, setWithoutVat] = useState(0);
+  const [discountValue, setDiscountValue] = useState(0);
 
   const handleClick = (e) => {
     if (name.length == 0) {
@@ -43,9 +45,23 @@ function App() {
       setWrongPrice(false);
       setWrongAmount(false);
       setWrongDiscount(false);
-      setSubTotal(subtotal + parseInt(price));
-      setTotal(total + parseInt(price) * 1.2);
+
+      setSubtotal(
+        subtotal +
+          (parseInt(price) - (parseInt(discount) / 100) * 100) *
+            parseInt(amount)
+      );
     }
+    setTotalDiscount(
+      totalDiscount + (parseInt(discount) / 100) * 100 * parseInt(amount)
+    );
+
+    setTotal(
+      total +
+        (parseInt(price) - (parseInt(discount) / 100) * 100) *
+          parseInt(amount) *
+          1.2
+    );
   };
 
   return (
@@ -79,13 +95,13 @@ function App() {
               <div className="flex mt-10 justify-between">
                 <div>
                   <label htmlFor="price" className="block text-xs font-medium">
-                    Price
+                    Price <span className="text-special">(w/o VAT)</span>
                   </label>
                   <input
                     type="number"
                     id="price"
                     onChange={(e) => setPrice(e.target.value)}
-                    placeholder="100€"
+                    placeholder="0€"
                     className="mt-1 rounded-md shadow-sm border-lightGray bg-white text-black sm:text-s"
                   />
                   {wrongPrice ? (
@@ -128,7 +144,7 @@ function App() {
                     type="number"
                     id="discount"
                     onChange={(e) => setDiscount(e.target.value)}
-                    placeholder="10%"
+                    placeholder="0%"
                     className="mt-1 rounded-md shadow-sm border-lightGray bg-white text-black sm:text-s"
                   />
                   {wrongDiscount ? (
@@ -162,8 +178,25 @@ function App() {
                     discount={product.discount}
                     onClick={() => {
                       setProducts(products.filter((p) => p.id !== product.id));
-                      setSubTotal(subtotal - parseInt(product.price));
-                      setTotal(total - parseInt(product.price) * 1.2);
+                      setSubtotal(
+                        subtotal -
+                          (parseInt(product.price) -
+                            (parseInt(product.discount) / 100) * 100) *
+                            parseInt(product.amount)
+                      );
+                      setTotalDiscount(
+                        totalDiscount -
+                          (parseInt(product.discount) / 100) *
+                            100 *
+                            parseInt(product.amount)
+                      );
+                      setTotal(
+                        total -
+                          (parseInt(product.price) -
+                            (parseInt(product.discount) / 100) * 100) *
+                            parseInt(product.amount) *
+                            1.2
+                      );
                     }}
                   />
                 </div>
@@ -182,7 +215,7 @@ function App() {
               </div>
               <div className="flex items-center justify-between mt-1">
                 <p>Total discount</p>
-                <p>0€</p>
+                <p>{totalDiscount}€</p>
               </div>
               <div className="flex items-center justify-between mt-10">
                 <p className="font-medium text-xl">Total</p>
