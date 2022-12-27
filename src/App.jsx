@@ -8,7 +8,6 @@ function App() {
   const [price, setPrice] = useState(0);
   const [amount, setAmount] = useState(0);
   const [discount, setDiscount] = useState(0);
-
   const [products, setProducts] = useState([]);
 
   return (
@@ -20,8 +19,8 @@ function App() {
               <div className="flex justify-start items-center ">
                 <div className="w-4/12">
                   <label
-                    for="name"
-                    class="block text-xs font-medium text-white"
+                    htmlFor="name"
+                    className="block text-xs font-medium text-white"
                   >
                     Product name
                   </label>
@@ -37,8 +36,8 @@ function App() {
               <div className="flex mt-10 justify-between">
                 <div>
                   <label
-                    for="price"
-                    class="block text-xs font-medium text-white"
+                    htmlFor="price"
+                    className="block text-xs font-medium text-white"
                   >
                     Price
                   </label>
@@ -52,8 +51,8 @@ function App() {
                 </div>
                 <div>
                   <label
-                    for="amount"
-                    class="block text-xs font-medium text-white"
+                    htmlFor="amount"
+                    className="block text-xs font-medium text-white"
                   >
                     Amount
                   </label>
@@ -68,8 +67,8 @@ function App() {
 
                 <div>
                   <label
-                    for="discount"
-                    class="block text-xs font-medium text-white"
+                    htmlFor="discount"
+                    className="block text-xs font-medium text-white"
                   >
                     Discount
                   </label>
@@ -95,6 +94,7 @@ function App() {
                       discount: discount,
                     },
                   ]);
+                  handleSummary();
                 }}
                 className="mt-10 px-10 py-2 font-medium text-xs  mx-auto rounded-xl bg-special text-white"
               >
@@ -127,6 +127,23 @@ function App() {
             </div>
             <div className="w-2/6 ml-10	">
               <h1 className="font-medium text-2xl">Summary</h1>
+              <div className="flex items-center justify-between mt-10">
+                <div className="flex items-center">
+                  <p>Subtotal</p>
+                  <p className="text-xs font-normal text-special ml-2">
+                    w/o VAT
+                  </p>
+                </div>
+                <p>0€</p>
+              </div>
+              <div className="flex items-center justify-between mt-1">
+                <p>Total discount</p>
+                <p>0€</p>
+              </div>
+              <div className="flex items-center justify-between mt-10">
+                <p className="font-medium text-xl">Total</p>
+                <p className="font-medium text-xl text-speci">0€</p>
+              </div>
             </div>
           </div>
         </div>

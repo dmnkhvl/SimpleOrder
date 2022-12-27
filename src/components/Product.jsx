@@ -18,7 +18,7 @@ function Product({ name, price, amount, discount }) {
           </p>
           <div className="flex items-center">
             <p className="font-normal text-lg mt-1">
-              {price * amount}€ before discount
+              {Math.round(price * amount * 100) / 100}€ before discount
             </p>
             <p className="text-xs font-normal text-special ml-2 mt-1 ">
               w/o VAT
@@ -32,14 +32,22 @@ function Product({ name, price, amount, discount }) {
           </p>
           <div className="flex items-center">
             <p className="font-semibold text-lg">
-              {price * amount - price * amount * (discount / 100)}€ after
-              discount
+              {Math.round(
+                (price * amount - price * amount * (discount / 100)) * 100
+              ) / 100}
+              € after discount
             </p>
             <p className="text-xs font-normal text-special ml-2 ">w/o VAT</p>
           </div>
         </div>
-        <p className="flex justify-center mt-4 text-special font-semibold text-2xl">
-          {(price * amount - price * amount * (discount / 100)) * 1.2}€ total
+        <p className="flex justify-center mt-4 font-semibold text-2xl">
+          <span className="text-special mr-2">
+            {Math.round(
+              (price * amount - price * amount * (discount / 100)) * 1.2 * 100
+            ) / 100}
+            €
+          </span>
+          total
         </p>
       </div>
     </div>
