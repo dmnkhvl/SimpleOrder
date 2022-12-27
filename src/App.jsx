@@ -18,7 +18,7 @@ function App() {
       setProducts([
         ...products,
         {
-          key: id++,
+          id: id++,
           name: name,
           price: price,
           amount: amount,
@@ -180,6 +180,7 @@ function App() {
           </div>
         </div>
       </div>
+      {console.log(products)}
     </div>
   );
 }
