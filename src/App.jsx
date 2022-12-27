@@ -9,13 +9,33 @@ function App() {
   const [amount, setAmount] = useState(0);
   const [discount, setDiscount] = useState(0);
   const [products, setProducts] = useState([]);
+  const [error, setError] = useState(false);
+
+  const handleClick = (e) => {
+    if (name.length == 0 || price <= 0 || amount <= 0 || discount < 0) {
+      setError(true);
+    } else {
+      setProducts([
+        ...products,
+        {
+          key: id++,
+          name: name,
+          price: price,
+          amount: amount,
+          discount: discount,
+        },
+      ]);
+      setError(false);
+    }
+  };
+
   return (
     <div className="App">
       <div className="bg-white text-black min-h-screen">
         <div className="mx-auto max-w-screen-xl pt-10	">
           <div className="mx-auto max-w-screen-sm bg-gray rounded-xl ">
             <div className="flex flex-col p-5 gap-2 mx-auto text-darkGray shadow-sm mb-10 ">
-              <div className="flex justify-start items-center ">
+              <div className="flex justify-start items-center">
                 <div className="w-4/12">
                   <label
                     htmlFor="name"
@@ -32,6 +52,14 @@ function App() {
                   className="mt-1 w-4/6	rounded-md shadow-sm border-gray-700 bg-gray-900 text-white sm:text-s"
                 />
               </div>
+              {error ? (
+                <p className="text-white text-sm py-2 bg-red-500 rounded-xl text-center">
+                  Product name can't be empty
+                </p>
+              ) : (
+                ""
+              )}
+
               <div className="flex mt-10 justify-between">
                 <div>
                   <label
@@ -47,7 +75,15 @@ function App() {
                     placeholder="100€"
                     className="mt-1 rounded-md shadow-sm border-gray-700 bg-gray-900 text-white sm:text-s"
                   />
+                  {error ? (
+                    <p className=" mt-2 py-2 text-xs text-white bg-red-500 rounded-xl text-center">
+                      Invalid value
+                    </p>
+                  ) : (
+                    ""
+                  )}
                 </div>
+
                 <div>
                   <label
                     htmlFor="amount"
@@ -62,6 +98,13 @@ function App() {
                     placeholder="0"
                     className="mt-1 rounded-md shadow-sm border-gray-700 bg-gray-900 text-white sm:text-s"
                   />
+                  {error ? (
+                    <p className=" mt-2 py-2 text-xs text-white bg-red-500 rounded-xl text-center">
+                      Invalid value
+                    </p>
+                  ) : (
+                    ""
+                  )}
                 </div>
 
                 <div>
@@ -78,22 +121,18 @@ function App() {
                     placeholder="10%"
                     className="mt-1 rounded-md shadow-sm border-gray-700 bg-gray-900 text-white sm:text-s"
                   />
+                  {error ? (
+                    <p className=" mt-2 py-2 text-xs text-white bg-red-500 rounded-xl text-center">
+                      Invalid value
+                    </p>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
 
               <button
-                onClick={() => {
-                  setProducts([
-                    ...products,
-                    {
-                      id: id++,
-                      name: name,
-                      price: price,
-                      amount: amount,
-                      discount: discount,
-                    },
-                  ]);
-                }}
+                onClick={() => handleClick()}
                 className="mt-10 px-10 py-2 font-medium text-xs  mx-auto rounded-xl bg-special text-white"
               >
                 Create new product
