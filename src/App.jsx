@@ -93,7 +93,6 @@ function App() {
                       discount: discount,
                     },
                   ]);
-                  handleSummary();
                 }}
                 className="mt-10 px-10 py-2 font-medium text-xs  mx-auto rounded-xl bg-special text-white"
               >
