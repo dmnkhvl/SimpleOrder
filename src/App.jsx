@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="bg-dark text-white h-screen">
+      <div className="bg-dark text-white min-h-screen">
         <div className="mx-auto max-w-screen-xl pt-10	">
           <div className="mx-auto max-w-screen-sm bg-gray rounded-xl ">
             <div className="flex flex-col p-5 gap-2 mx-auto text-darkGray shadow-sm mb-10 ">
@@ -102,27 +102,32 @@ function App() {
               </button>
             </div>
           </div>
-
-          <div className="p-10 grid grid-flow-col gap-x-5 overflow-scroll">
-            {products.map((product) => (
-              <div>
-                <Product
-                  key={product.id}
-                  name={product.name}
-                  price={product.price}
-                  amount={product.amount}
-                  discount={product.discount}
-                />
-                <button
-                  onClick={() => {
-                    setProducts(products.filter((p) => p.id !== product.id));
-                  }}
-                  className="mt-10 px-10 py-2 font-medium text-xs  mx-auto rounded-xl bg-special text-white"
-                >
-                  Delete
-                </button>
-              </div>
-            ))}
+          <div className="flex justify-center items-start p-10">
+            <div className="w-4/6	grid grid-flow-row gap-y-5">
+              <h1 className="font-medium text-2xl">Bag</h1>
+              {products.map((product) => (
+                <div className="flex flex-col">
+                  <Product
+                    key={product.id}
+                    name={product.name}
+                    price={product.price}
+                    amount={product.amount}
+                    discount={product.discount}
+                  />
+                  <button
+                    onClick={() => {
+                      setProducts(products.filter((p) => p.id !== product.id));
+                    }}
+                    className="mt-6 px-10 py-2 font-medium text-xs  mx-auto rounded-xl bg-special text-white"
+                  >
+                    Delete
+                  </button>
+                </div>
+              ))}
+            </div>
+            <div className="w-2/6 ml-10	">
+              <h1 className="font-medium text-2xl">Summary</h1>
+            </div>
           </div>
         </div>
       </div>
