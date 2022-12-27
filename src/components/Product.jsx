@@ -3,9 +3,9 @@ import React from "react";
 function Product({ name, price, amount, discount, onClick }) {
   return (
     <div className="mx-auto w-full pb-8 border-b border-lightGray">
-      <div className="mt-4">
+      <div className="mt-4 text-mdGray">
         <div className="flex justify-between items-center">
-          <p className="font-bold text-lg text-black">{name}</p>
+          <p className="font-semibold text-lg text-black">{name}</p>
           <div className="flex items-center">
             <p className="font-normal text-sm">{price}€ per piece</p>
             <p className="text-xs font-normal text-special ml-2 "> w/o VAT</p>
@@ -31,7 +31,7 @@ function Product({ name, price, amount, discount, onClick }) {
             discount
           </p>
           <div className="flex items-center">
-            <p className="font-semibold text-lg">
+            <p className="font-normal text-lg">
               {Math.round(
                 (price * amount - price * amount * (discount / 100)) * 100
               ) / 100}
@@ -47,7 +47,7 @@ function Product({ name, price, amount, discount, onClick }) {
           >
             Delete
           </button>
-          <p className="flex justify-center  font-semibold text-2xl">
+          <p className="flex justify-center text-black font-semibold text-2xl">
             <span className="text-special mr-2">
               {Math.round(
                 (price * amount - price * amount * (discount / 100)) * 1.2 * 100
