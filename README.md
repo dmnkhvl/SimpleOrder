@@ -1,7 +1,5 @@
 # Order
 
-**Still in progress**
-
 SPA, that allows user to create products, add them to shopping cart and see the total of the "order".
 
 Build with [React](https://reactjs.org/) and [Tailwind CSS](https://tailwindcss.com/).
