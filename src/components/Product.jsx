@@ -1,4 +1,5 @@
 import React from "react";
+import { BiTrash as Delete } from "react-icons/bi";
 
 function Product({ name, price, amount, discount, onClick }) {
   return (
@@ -41,11 +42,8 @@ function Product({ name, price, amount, discount, onClick }) {
           </div>
         </div>
         <div className="flex justify-between items-center mt-4">
-          <button
-            onClick={onClick}
-            className="px-10 py-2 font-medium text-xs rounded-xl bg-special text-white"
-          >
-            Delete
+          <button onClick={onClick} className="text-black">
+            <Delete size={24} />
           </button>
           <p className="flex justify-center text-black font-semibold text-2xl">
             <span className="text-special mr-2">
