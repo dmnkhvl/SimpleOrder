@@ -72,10 +72,10 @@ function App() {
   return (
     <div className="App">
       <div className="bg-white text-black min-h-screen">
-        <div className="mx-auto max-w-screen-xl flex flex-col">
+        <div className="flex flex-col">
           {/* Add new */}
           <div className="mx-auto w-full p-6 bg-black text-white">
-            <div className="flex flex-col gap-y-5 items-start p-5 gap-2 mx-auto text-darkGray ">
+            <div className="max-w-screen-md flex flex-col gap-y-5 items-start p-5 gap-2 mx-auto text-darkGray ">
               <div className="w-full">
                 <label
                   htmlFor="name"
@@ -178,7 +178,11 @@ function App() {
           </div>
           {/*  BAG */}
           <div
-            className={products.length > 0 ? "mx-auto w-full p-6" : "hidden"}
+            className={
+              products.length > 0
+                ? "mx-auto w-full p-6 max-w-screen-md"
+                : "hidden"
+            }
           >
             <h1 className="font-medium text-2xl pb-4 border-b border-lightGray">
               Bag
@@ -221,7 +225,7 @@ function App() {
           </div>
           {/* Summary */}
 
-          <div className="mx-auto w-full p-6">
+          <div className="mx-auto w-full p-6 max-w-screen-md">
             <h1 className="font-medium text-2xl">Summary</h1>
             <div className="flex items-center justify-between mt-2">
               <div className="flex items-center">
