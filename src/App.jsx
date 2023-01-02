@@ -16,6 +16,8 @@ function App() {
   const [wrongPrice, setWrongPrice] = useState(false);
   const [wrongAmount, setWrongAmount] = useState(false);
   const [wrongDiscount, setWrongDiscount] = useState(false);
+  const [withouVat, setWithoutVat] = useState(0);
+  const [discountValue, setDiscountValue] = useState(0);
 
   const handleClick = (e) => {
     if (name.length == 0) {
@@ -65,8 +67,9 @@ function App() {
   return (
     <div className="App">
       <div className="bg-white text-black min-h-screen">
-        <div className="mx-auto max-w-screen-xl pt-10	">
-          <div className="mx-auto max-w-screen-sm bg-ligtherGray text-black rounded-xl">
+        <div className="mx-auto max-w-screen-xl pt-10 flex flex-col">
+          {/* Add new */}
+          <div className="mx-auto max-w-screen-sm bg-ligtherGray text-black rounded-xl ">
             <div className="flex flex-col p-5 gap-2 mx-auto text-darkGray mb-10 ">
               <div className="flex justify-start items-center">
                 <div className="w-4/12">
@@ -163,62 +166,62 @@ function App() {
               </button>
             </div>
           </div>
-          <div className="flex justify-center items-start p-10">
-            <div className="w-4/6	grid grid-flow-row gap-y-5">
-              <h1 className="font-medium text-2xl">Bag</h1>
-              {products.map((product) => (
-                <div className="flex flex-col">
-                  <Product
-                    key={product.id}
-                    name={product.name}
-                    price={product.price}
-                    amount={product.amount}
-                    discount={product.discount}
-                    onClick={() => {
-                      setProducts(products.filter((p) => p.id !== product.id));
-                      setSubtotal(
-                        subtotal -
-                          (parseInt(product.price) -
-                            (parseInt(product.discount) / 100) * 100) *
-                            parseInt(product.amount)
-                      );
-                      setTotalDiscount(
-                        totalDiscount -
-                          (parseInt(product.discount) / 100) *
-                            100 *
-                            parseInt(product.amount)
-                      );
-                      setTotal(
-                        total -
-                          (parseInt(product.price) -
-                            (parseInt(product.discount) / 100) * 100) *
-                            parseInt(product.amount) *
-                            1.2
-                      );
-                    }}
-                  />
-                </div>
-              ))}
+          {/*  BAG */}
+          <div className="mx-auto w-full p-6">
+            <h1 className="font-medium text-2xl pb-4 border-b border-lightGray">
+              Bag
+            </h1>
+            {products.map((product) => (
+              <div className="flex flex-col">
+                <Product
+                  key={product.id}
+                  name={product.name}
+                  price={product.price}
+                  amount={product.amount}
+                  discount={product.discount}
+                  onClick={() => {
+                    setProducts(products.filter((p) => p.id !== product.id));
+                    setSubtotal(
+                      subtotal -
+                        (parseInt(product.price) -
+                          (parseInt(product.discount) / 100) * 100) *
+                          parseInt(product.amount)
+                    );
+                    setTotalDiscount(
+                      totalDiscount -
+                        (parseInt(product.discount) / 100) *
+                          100 *
+                          parseInt(product.amount)
+                    );
+                    setTotal(
+                      total -
+                        (parseInt(product.price) -
+                          (parseInt(product.discount) / 100) * 100) *
+                          parseInt(product.amount) *
+                          1.2
+                    );
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+          {/* Summary */}
+          <div className="">
+            <h1 className="font-medium text-2xl">Summary</h1>
+            <div className="flex items-center justify-between mt-10">
+              <div className="flex items-center">
+                <p>Subtotal</p>
+                <p className="text-xs font-normal text-special ml-2">w/o VAT</p>
+              </div>
+              <p>{subtotal}€</p>
             </div>
-            <div className="w-2/6 ml-10	">
-              <h1 className="font-medium text-2xl">Summary</h1>
-              <div className="flex items-center justify-between mt-10">
-                <div className="flex items-center">
-                  <p>Subtotal</p>
-                  <p className="text-xs font-normal text-special ml-2">
-                    w/o VAT
-                  </p>
-                </div>
-                <p>{subtotal}€</p>
-              </div>
-              <div className="flex items-center justify-between mt-1">
-                <p>Total discount</p>
-                <p>{totalDiscount}€</p>
-              </div>
-              <div className="flex items-center justify-between mt-10">
-                <p className="font-medium text-xl">Total</p>
-                <p className="font-medium text-xl text-speci">{total}€</p>
-              </div>
+            <div className="flex items-center justify-between mt-1">
+              <p>Total discount</p>
+              <p>{totalDiscount}€</p>
+            </div>
+            <div className="flex items-center justify-between mt-10">
+              <p className="font-medium text-xl">Total</p>
+              <p className="font-medium text-xl text-speci">{total}€</p>
             </div>
           </div>
         </div>
