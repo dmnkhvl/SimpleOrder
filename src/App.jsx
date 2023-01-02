@@ -72,9 +72,9 @@ function App() {
   return (
     <div className="App">
       <div className="bg-white text-black min-h-screen">
-        <div className="flex flex-col">
+        <div className="flex flex-col md:flex-row">
           {/* Add new */}
-          <div className="mx-auto w-full p-6 bg-black text-white">
+          <div className="mx-auto w-full md:h-screen  p-6 bg-black text-white">
             <div className="max-w-screen-md flex flex-col gap-y-5 items-start p-5 gap-2 mx-auto text-darkGray ">
               <div className="w-full">
                 <label
@@ -167,7 +167,6 @@ function App() {
                   }
                 />
               </div>
-
               <button
                 onClick={() => handleClick()}
                 className="mt-10 px-10 py-2 font-medium w-full rounded-3xl bg-white text-black"
@@ -176,73 +175,77 @@ function App() {
               </button>
             </div>
           </div>
-          {/*  BAG */}
-          <div
-            className={
-              products.length > 0
-                ? "mx-auto w-full p-6 max-w-screen-md"
-                : "hidden"
-            }
-          >
-            <h1 className="font-medium text-2xl pb-4 border-b border-lightGray">
-              Bag
-            </h1>
-            {products.map((product) => (
-              <div className="flex flex-col">
-                <Product
-                  key={product.id}
-                  name={product.name}
-                  price={product.price}
-                  amount={product.amount}
-                  discount={product.discount}
-                  onClick={() => {
-                    setProducts(products.filter((p) => p.id !== product.id));
-                    setSubtotal(
-                      subtotal -
-                        Math.round(
-                          ((parseInt(price) -
-                            (parseInt(discount) / 100) * 100) *
-                            parseInt(amount)) /
-                            1.2
-                        )
-                    );
-                    setTotalDiscount(
-                      totalDiscount -
-                        (parseInt(product.discount) / 100) *
-                          100 *
-                          parseInt(product.amount)
-                    );
-                    setTotal(
-                      total -
-                        (parseInt(product.price) -
-                          (parseInt(product.discount) / 100) * 100) *
-                          parseInt(product.amount)
-                    );
-                  }}
-                />
-              </div>
-            ))}
-          </div>
-          {/* Summary */}
+          <div className="md:flex md:flex-col md:w-1/2 md:mt-6">
+            {/*  BAG */}
+            <div
+              className={
+                products.length > 0
+                  ? "mx-auto w-full p-6 max-w-screen-md"
+                  : "hidden"
+              }
+            >
+              <h1 className="font-medium text-2xl pb-4 border-b border-lightGray">
+                Bag
+              </h1>
+              {products.map((product) => (
+                <div className="flex flex-col">
+                  <Product
+                    key={product.id}
+                    name={product.name}
+                    price={product.price}
+                    amount={product.amount}
+                    discount={product.discount}
+                    onClick={() => {
+                      setProducts(products.filter((p) => p.id !== product.id));
+                      setSubtotal(
+                        subtotal -
+                          Math.round(
+                            ((parseInt(price) -
+                              (parseInt(discount) / 100) * 100) *
+                              parseInt(amount)) /
+                              1.2
+                          )
+                      );
+                      setTotalDiscount(
+                        totalDiscount -
+                          (parseInt(product.discount) / 100) *
+                            100 *
+                            parseInt(product.amount)
+                      );
+                      setTotal(
+                        total -
+                          (parseInt(product.price) -
+                            (parseInt(product.discount) / 100) * 100) *
+                            parseInt(product.amount)
+                      );
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+            {/* Summary */}
 
-          <div className="mx-auto w-full p-6 max-w-screen-md">
-            <h1 className="font-medium text-2xl">Summary</h1>
-            <div className="flex items-center justify-between mt-2">
-              <div className="flex items-center">
-                <p className="text-mdGray">Subtotal</p>
-                <p className="text-xs font-normal ml-2 text-mdGray">w/o VAT</p>
+            <div className="mx-auto w-full p-6 max-w-screen-md">
+              <h1 className="font-medium text-2xl">Summary</h1>
+              <div className="flex items-center justify-between mt-2">
+                <div className="flex items-center">
+                  <p className="text-mdGray">Subtotal</p>
+                  <p className="text-xs font-normal ml-2 text-mdGray">
+                    w/o VAT
+                  </p>
+                </div>
+                <p className="text-mdGray">{subtotal}€</p>
               </div>
-              <p className="text-mdGray">{subtotal}€</p>
-            </div>
-            <div className="flex items-center justify-between mt-1">
-              <p className="text-mdGray">Total discount</p>
-              <p className="text-mdGray">{totalDiscount}€</p>
-            </div>
-            <div className="flex items-center justify-between mt-4">
-              <p className="font-medium text-xl">Total</p>
-              <p className="font-medium text-xl text-speci">
-                {Math.round(total * 100) / 100}€
-              </p>
+              <div className="flex items-center justify-between mt-1">
+                <p className="text-mdGray">Total discount</p>
+                <p className="text-mdGray">{totalDiscount}€</p>
+              </div>
+              <div className="flex items-center justify-between mt-4">
+                <p className="font-medium text-xl">Total</p>
+                <p className="font-medium text-xl text-speci">
+                  {Math.round(total * 100) / 100}€
+                </p>
+              </div>
             </div>
           </div>
         </div>
