@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["SF Pro Display", "sans-serif"],
+        sans: ["Roboto", "sans-serif"],
       },
       colors: {
         dark: "#1D1B1D",
