@@ -16,8 +16,6 @@ function App() {
   const [wrongPrice, setWrongPrice] = useState(false);
   const [wrongAmount, setWrongAmount] = useState(false);
   const [wrongDiscount, setWrongDiscount] = useState(false);
-  const [withouVat, setWithoutVat] = useState(0);
-  const [discountValue, setDiscountValue] = useState(0);
 
   const handleClick = (e) => {
     if (name.length == 0) {
