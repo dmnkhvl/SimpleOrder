@@ -34,9 +34,12 @@ function Product({ name, price, amount, discount, onClick }) {
           </div>
           <div className="flex items-end justify-between">
             <p>Size: UNI</p>
-            <p className="px-5 py-2 text-sm rounded-2xl bg-lightRed text-red ">
+            <button
+              onClick={onClick}
+              className="px-5 py-2 text-sm rounded-2xl bg-lightRed text-red "
+            >
               Delete
-            </p>
+            </button>
           </div>
         </div>
       </div>
