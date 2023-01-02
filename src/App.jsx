@@ -206,22 +206,24 @@ function App() {
             ))}
           </div>
           {/* Summary */}
-          <div className="">
+          <div className="mx-auto w-full p-6">
             <h1 className="font-medium text-2xl">Summary</h1>
-            <div className="flex items-center justify-between mt-10">
+            <div className="flex items-center justify-between mt-2">
               <div className="flex items-center">
-                <p>Subtotal</p>
-                <p className="text-xs font-normal text-special ml-2">w/o VAT</p>
+                <p className="text-mdGray">Subtotal</p>
+                <p className="text-xs font-normal ml-2 text-mdGray">w/o VAT</p>
               </div>
-              <p>{subtotal}€</p>
+              <p className="text-mdGray">{subtotal}€</p>
             </div>
             <div className="flex items-center justify-between mt-1">
-              <p>Total discount</p>
-              <p>{totalDiscount}€</p>
+              <p className="text-mdGray">Total discount</p>
+              <p className="text-mdGray">{totalDiscount}€</p>
             </div>
-            <div className="flex items-center justify-between mt-10">
+            <div className="flex items-center justify-between mt-4">
               <p className="font-medium text-xl">Total</p>
-              <p className="font-medium text-xl text-speci">{total}€</p>
+              <p className="font-medium text-xl text-speci">
+                {Math.round(total * 100) / 100}€
+              </p>
             </div>
           </div>
         </div>
