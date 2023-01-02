@@ -60,9 +60,12 @@ function App() {
     );
 
     setTotal(
-      total +
-        (parseInt(price) * parseInt(amount) -
-          parseInt(price) * parseInt(amount) * (parseInt(discount) / 100) * 100)
+      Math.round(
+        total +
+          parseInt(price) *
+            parseInt(amount) *
+            ((100 - parseInt(discount)) / 100)
+      )
     );
   };
 
