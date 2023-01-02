@@ -67,100 +67,105 @@ function App() {
   return (
     <div className="App">
       <div className="bg-white text-black min-h-screen">
-        <div className="mx-auto max-w-screen-xl pt-10 flex flex-col">
+        <div className="mx-auto max-w-screen-xl flex flex-col">
           {/* Add new */}
-          <div className="mx-auto max-w-screen-sm bg-ligtherGray text-black rounded-xl ">
-            <div className="flex flex-col p-5 gap-2 mx-auto text-darkGray mb-10 ">
-              <div className="flex justify-start items-center">
-                <div className="w-4/12">
-                  <label htmlFor="name" className="block text-xs font-medium">
-                    Product name
-                  </label>
-                </div>
+          <div className="mx-auto w-full p-6 bg-black text-white">
+            <div className="flex flex-col gap-y-5 items-start p-5 gap-2 mx-auto text-darkGray mb-10">
+              <div className="w-full">
+                <label
+                  htmlFor="name"
+                  className={
+                    wrongName ? "ml-3 font-bold text-red " : "ml-3 font-bold"
+                  }
+                >
+                  Product name
+                </label>
                 <input
                   type="text"
                   id="name"
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="LeBron XX - The Debut"
-                  className="mt-1 w-4/6	rounded-md shadow-sm border-lightGray bg-white text-black sm:text-s"
+                  placeholder={
+                    wrongName
+                      ? "Product name can't be empty"
+                      : "Name of the product"
+                  }
+                  className={
+                    wrongName
+                      ? "mt-2 w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
+                      : "mt-2 w-full shadow-sm border-lightGray bg-black text-white rounded-3xl ring-1 ring-lightGray placeholder-white font-medium text-sm"
+                  }
                 />
               </div>
-              {wrongName ? (
-                <p className="mt-1 font-medium text-xs text-special mr-2 text-right">
-                  Product name can't be empty
-                </p>
-              ) : (
-                ""
-              )}
 
-              <div className="flex mt-10 justify-between">
-                <div>
-                  <label htmlFor="price" className="block text-xs font-medium">
-                    Price <span className="text-special">(w/o VAT)</span>
-                  </label>
-                  <input
-                    type="number"
-                    id="price"
-                    onChange={(e) => setPrice(e.target.value)}
-                    placeholder="0€"
-                    className="mt-1 rounded-md shadow-sm border-lightGray bg-white text-black sm:text-s"
-                  />
-                  {wrongPrice ? (
-                    <p className="mt-1 font-medium text-xs text-special ml-2">
-                      Invalid value
-                    </p>
-                  ) : (
-                    ""
-                  )}
-                </div>
+              <div className="w-full">
+                <label
+                  htmlFor="price"
+                  className={
+                    wrongPrice ? "ml-3 font-bold text-red " : "ml-3 font-bold"
+                  }
+                >
+                  Price
+                </label>
+                <input
+                  type="number"
+                  id="price"
+                  onChange={(e) => setPrice(e.target.value)}
+                  placeholder={wrongPrice ? "Invalid value" : "0€"}
+                  className={
+                    wrongPrice
+                      ? "mt-2 w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
+                      : "mt-2 w-full shadow-sm border-lightGray bg-black text-white rounded-3xl ring-1 ring-lightGray placeholder-white font-medium text-sm"
+                  }
+                />
+              </div>
 
-                <div>
-                  <label htmlFor="amount" className="block text-xs font-medium">
-                    Amount
-                  </label>
-                  <input
-                    type="number"
-                    id="amount"
-                    onChange={(e) => setAmount(e.target.value)}
-                    placeholder="0"
-                    className="mt-1 rounded-md shadow-sm border-lightGray bg-white text-black sm:text-s"
-                  />
-                  {wrongAmount ? (
-                    <p className="mt-1 font-medium text-xs text-special ml-2">
-                      Invalid value
-                    </p>
-                  ) : (
-                    ""
-                  )}
-                </div>
+              <div className="w-full">
+                <label
+                  htmlFor="amount"
+                  className={
+                    wrongAmount ? "ml-3 font-bold text-red " : "ml-3 font-bold"
+                  }
+                >
+                  Amount
+                </label>
+                <input
+                  type="number"
+                  id="amount"
+                  onChange={(e) => setAmount(e.target.value)}
+                  placeholder={wrongAmount ? "Invalid value" : "0"}
+                  className={
+                    wrongAmount
+                      ? "mt-2 w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
+                      : "mt-2 w-full shadow-sm border-lightGray bg-black text-white rounded-3xl ring-1 ring-lightGray placeholder-white text-sm"
+                  }
+                />
+              </div>
 
-                <div>
-                  <label
-                    htmlFor="discount"
-                    className="block text-xs font-medium"
-                  >
-                    Discount
-                  </label>
-                  <input
-                    type="number"
-                    id="discount"
-                    onChange={(e) => setDiscount(e.target.value)}
-                    placeholder="0%"
-                    className="mt-1 rounded-md shadow-sm border-lightGray bg-white text-black sm:text-s"
-                  />
-                  {wrongDiscount ? (
-                    <p className="mt-1 font-medium text-xs text-special ml-2">
-                      Invalid value
-                    </p>
-                  ) : (
-                    ""
-                  )}
-                </div>
+              <div className="w-full">
+                <label
+                  htmlFor="discount"
+                  className={
+                    wrongDiscount ? "ml-3 font-bold text-red" : "ml-3 font-bold"
+                  }
+                >
+                  Discount
+                </label>
+                <input
+                  type="number"
+                  id="discount"
+                  onChange={(e) => setDiscount(e.target.value)}
+                  placeholder={wrongDiscount ? "Invalid value" : "0%"}
+                  className={
+                    wrongDiscount
+                      ? "mt-2 w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
+                      : "mt-2 w-full shadow-sm border-lightGray bg-black text-white rounded-3xl ring-1 ring-lightGray placeholder-white font-medium text-sm"
+                  }
+                />
               </div>
 
               <button
                 onClick={() => handleClick()}
-                className="mt-10 px-10 py-2 font-medium text-xs  mx-auto rounded-xl bg-special text-white"
+                className="mt-10 px-10 py-2 font-medium w-full rounded-3xl bg-white text-black"
               >
                 Create new product
               </button>
