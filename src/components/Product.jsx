@@ -13,23 +13,24 @@ function Product({ name, price, amount, discount, onClick }) {
               {discount > 0 ? (
                 <div className="flex ">
                   <p className="line-through">
-                    {Math.round(price * amount * 1.2 * 100) / 100}€
+                    {Math.round(price * amount * 100) / 100}€
                   </p>
-                  <p className="ml-2">
+                  <p className="ml-2 text-gray">
                     {Math.round(
-                      (price * amount - price * amount * (discount / 100)) *
-                        1.2 *
-                        100
+                      (price * amount - price * amount * (discount / 100)) * 100
                     ) / 100}
                     €
                   </p>
                 </div>
               ) : (
-                <p>{Math.round(price * amount * 1.2 * 100) / 100}€</p>
+                <p>{Math.round(price * amount * 100) / 100}€</p>
               )}
             </div>
             <div>
-              <p className=" font-bold text-lg text-black ">{amount}</p>
+              <p className=" text-black ">
+                <span className="mr-2">Amount</span>
+                <span className="font-bold text-lg text-black ">{amount}</span>
+              </p>
             </div>
           </div>
           <div className="flex items-end justify-between">

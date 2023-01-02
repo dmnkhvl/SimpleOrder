@@ -48,8 +48,11 @@ function App() {
 
       setSubtotal(
         subtotal +
-          (parseInt(price) - (parseInt(discount) / 100) * 100) *
-            parseInt(amount)
+          Math.round(
+            ((parseInt(price) - (parseInt(discount) / 100) * 100) *
+              parseInt(amount)) /
+              1.2
+          )
       );
     }
     setTotalDiscount(
@@ -58,9 +61,8 @@ function App() {
 
     setTotal(
       total +
-        (parseInt(price) - (parseInt(discount) / 100) * 100) *
-          parseInt(amount) *
-          1.2
+        (parseInt(price) * parseInt(amount) -
+          parseInt(price) * parseInt(amount) * (parseInt(discount) / 100) * 100)
     );
   };
 
@@ -70,7 +72,7 @@ function App() {
         <div className="mx-auto max-w-screen-xl flex flex-col">
           {/* Add new */}
           <div className="mx-auto w-full p-6 bg-black text-white">
-            <div className="flex flex-col gap-y-5 items-start p-5 gap-2 mx-auto text-darkGray mb-10">
+            <div className="flex flex-col gap-y-5 items-start p-5 gap-2 mx-auto text-darkGray ">
               <div className="w-full">
                 <label
                   htmlFor="name"
@@ -172,7 +174,9 @@ function App() {
             </div>
           </div>
           {/*  BAG */}
-          <div className="mx-auto w-full p-6">
+          <div
+            className={products.length > 0 ? "mx-auto w-full p-6" : "hidden"}
+          >
             <h1 className="font-medium text-2xl pb-4 border-b border-lightGray">
               Bag
             </h1>
@@ -188,9 +192,12 @@ function App() {
                     setProducts(products.filter((p) => p.id !== product.id));
                     setSubtotal(
                       subtotal -
-                        (parseInt(product.price) -
-                          (parseInt(product.discount) / 100) * 100) *
-                          parseInt(product.amount)
+                        Math.round(
+                          ((parseInt(price) -
+                            (parseInt(discount) / 100) * 100) *
+                            parseInt(amount)) /
+                            1.2
+                        )
                     );
                     setTotalDiscount(
                       totalDiscount -
@@ -202,8 +209,7 @@ function App() {
                       total -
                         (parseInt(product.price) -
                           (parseInt(product.discount) / 100) * 100) *
-                          parseInt(product.amount) *
-                          1.2
+                          parseInt(product.amount)
                     );
                   }}
                 />
@@ -211,6 +217,7 @@ function App() {
             ))}
           </div>
           {/* Summary */}
+
           <div className="mx-auto w-full p-6">
             <h1 className="font-medium text-2xl">Summary</h1>
             <div className="flex items-center justify-between mt-2">
