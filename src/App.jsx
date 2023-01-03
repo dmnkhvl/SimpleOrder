@@ -92,6 +92,12 @@ function App() {
               setSubtotal={setSubtotal}
               setTotalDiscount={setTotalDiscount}
               setTotal={setTotal}
+              subtotal={subtotal}
+              price={price}
+              discount={discount}
+              amount={amount}
+              totalDiscount={totalDiscount}
+              total={total}
             />
             <Summary
               subtotal={subtotal}

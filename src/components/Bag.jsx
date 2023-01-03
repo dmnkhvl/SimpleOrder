@@ -6,6 +6,12 @@ function Bag({
   setSubtotal,
   setTotalDiscount,
   setTotal,
+  subtotal,
+  price,
+  discount,
+  amount,
+  totalDiscount,
+  total,
 }) {
   return (
     <div

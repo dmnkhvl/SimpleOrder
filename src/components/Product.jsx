@@ -1,4 +1,4 @@
-function Product({ name, price, amount, discount, handleClick }) {
+function Product({ name, price, amount, discount, onClick }) {
   return (
     <div className="mx-auto w-full pb-8 border-b border-lightGray">
       <div className="mt-4 text-mdGray">
@@ -33,7 +33,7 @@ function Product({ name, price, amount, discount, handleClick }) {
           <div className="flex items-end justify-between">
             <p>Size: UNI</p>
             <button
-              onClick={() => handleClick()}
+              onClick={onClick}
               className="px-5 py-2 text-sm rounded-2xl bg-lightRed text-red "
             >
               Delete

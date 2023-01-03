@@ -1,5 +1,5 @@
 function ProductForm({
-  onClick,
+  handleClick,
   setDiscount,
   setAmount,
   setPrice,
@@ -106,7 +106,7 @@ function ProductForm({
         </div>
         <button
           className="mt-10 px-10 py-2 font-medium w-full rounded-3xl bg-white text-black"
-          onClick={onClick}
+          onClick={handleClick}
         >
           Create new product
         </button>
