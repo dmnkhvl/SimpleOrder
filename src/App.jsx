@@ -100,6 +100,7 @@ function App() {
                       : "mt-2 w-full shadow-sm border-lightGray bg-black text-white rounded-3xl ring-1 ring-lightGray placeholder-white font-medium text-sm"
                   }
                   autoFocus
+                  maxLength={60}
                 />
               </div>
 
@@ -122,6 +123,7 @@ function App() {
                       ? "mt-2 w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
                       : "mt-2 w-full shadow-sm border-lightGray bg-black text-white rounded-3xl ring-1 ring-lightGray placeholder-white font-medium text-sm"
                   }
+                  maxLength={10}
                 />
               </div>
 
