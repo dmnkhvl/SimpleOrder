@@ -57,7 +57,9 @@ function App() {
       );
     }
     setTotalDiscount(
-      totalDiscount + (parseInt(discount) / 100) * 100 * parseInt(amount)
+      Math.rouund(
+        totalDiscount + (parseInt(discount) / 100) * 100 * parseInt(amount)
+      )
     );
 
     setTotal(
