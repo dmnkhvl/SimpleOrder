@@ -46,11 +46,13 @@ function Bag({
                     (parseInt(discount) / 100) * 100 * parseInt(amount)
                 )
               );
-              Math.round(
-                total -
-                  parseInt(price) *
-                    parseInt(amount) *
-                    ((100 - parseInt(discount)) / 100)
+              setTotal(
+                Math.round(
+                  total -
+                    parseInt(price) *
+                      parseInt(amount) *
+                      ((100 - parseInt(discount)) / 100)
+                )
               );
             }}
           />
