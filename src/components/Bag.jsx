@@ -33,26 +33,15 @@ function Bag({
             onClick={() => {
               setProducts(products.filter((p) => p.id !== product.id));
               setSubtotal(
-                subtotal -
-                  Math.round(
-                    ((parseInt(price) - (parseInt(discount) / 100) * 100) *
-                      parseInt(amount)) /
-                      1.2
-                  )
+                Math.round(
+                  subtotal - ((price - (discount / 100) * 100) * amount) / 1.2
+                )
               );
               setTotalDiscount(
-                Math.round(
-                  totalDiscount -
-                    (parseInt(discount) / 100) * 100 * parseInt(amount)
-                )
+                Math.round(totalDiscount - price * (discount / 100) * amount)
               );
               setTotal(
-                Math.round(
-                  total -
-                    parseInt(price) *
-                      parseInt(amount) *
-                      ((100 - parseInt(discount)) / 100)
-                )
+                Math.round(total - price * amount * ((100 - discount) / 100))
               );
             }}
           />
