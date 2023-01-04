@@ -23,8 +23,8 @@ function ProductForm({
             }
             className={
               wrongName
-                ? "mt-2 w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
-                : "mt-2 shadow-sm border-lightGray bg-black text-white ring-0 ring-lightGray placeholder-white border-b border-t-0 border-r-0 border-l-0 outline-0 font-semibold text-lg	"
+                ? "w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
+                : "bg-black text-white placeholder-white border-0 font-semibold text-lg"
             }
             autoFocus
             maxLength={60}
@@ -39,8 +39,8 @@ function ProductForm({
             placeholder={wrongPrice ? "Invalid value" : "0€"}
             className={
               wrongPrice
-                ? "mt-2 w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
-                : "mt-2 shadow-sm border-lightGray bg-black text-white ring-0 ring-lightGray placeholder-white border-b border-t-0 border-r-0 border-l-0 outline-0 font-semibold text-lg	"
+                ? "w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
+                : "bg-black text-white placeholder-white border-0 font-semibold text-lg"
             }
             maxLength={10}
           />
@@ -54,8 +54,8 @@ function ProductForm({
             placeholder={wrongAmount ? "Invalid value" : "0"}
             className={
               wrongAmount
-                ? "mt-2 w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
-                : "mt-2 shadow-sm border-lightGray bg-black text-white ring-0 ring-lightGray placeholder-white border-b border-t-0 border-r-0 border-l-0 outline-0 font-semibold text-lg	"
+                ? "w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
+                : " bg-black text-white placeholder-white border-0 font-semibold text-lg"
             }
           />
         </div>
@@ -69,7 +69,7 @@ function ProductForm({
             className={
               wrongDiscount
                 ? "mt-2 w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
-                : "mt-2 shadow-sm border-lightGray bg-black text-white ring-0 ring-lightGray placeholder-white border-b border-t-0 border-r-0 border-l-0 outline-0 font-semibold text-lg	"
+                : "bg-black text-white placeholder-white border-0 font-semibold text-lg"
             }
           />
         </div>
