@@ -19,6 +19,8 @@ module.exports = {
         special: "#FE5D00",
         lightRed: "#FFF3F4",
         red: "#E30613",
+        whiteGray: "#111111",
+        whiteAlt: "#F9FAFB",
       },
     },
   },
