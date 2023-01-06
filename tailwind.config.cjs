@@ -12,6 +12,7 @@ module.exports = {
         pastelBlack: "#1E1E1E",
         pastelDarkBlack: "#191919",
         pastelGray: "#262626",
+        pastelLightGray: "#2c2b2b",
 
         dark: "#1D1B1D",
         white: "#FEFEFE",

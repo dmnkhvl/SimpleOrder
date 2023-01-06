@@ -24,8 +24,8 @@ function ProductForm({
             }
             className={
               wrongName
-                ? "w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
-                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-white font-medium text-base w-full text-center rounded-xl py-3"
+                ? "bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
+                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 caret-pastelLightGray focus:placeholder-pastelDarkBlack"
             }
             autoFocus
             maxLength={60}
@@ -40,8 +40,8 @@ function ProductForm({
             placeholder={wrongPrice ? "Invalid value" : "0€"}
             className={
               wrongPrice
-                ? "w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
-                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-white font-medium text-base w-full text-center rounded-xl py-3"
+                ? "bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
+                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 caret-pastelLightGray focus:placeholder-pastelDarkBlack"
             }
             maxLength={10}
           />
@@ -55,8 +55,8 @@ function ProductForm({
             placeholder={wrongAmount ? "Invalid value" : "0"}
             className={
               wrongAmount
-                ? "w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
-                : " bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-white font-medium text-base w-full text-center rounded-xl py-3"
+                ? "bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
+                : " bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 caret-pastelLightGray focus:placeholder-pastelDarkBlack"
             }
           />
         </div>
@@ -69,8 +69,8 @@ function ProductForm({
             placeholder={wrongDiscount ? "Invalid value" : "-0%"}
             className={
               wrongDiscount
-                ? "mt-2 w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
-                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-white font-medium text-base w-full text-center rounded-xl py-3"
+                ? "mt-2 bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
+                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 caret-pastelLightGray focus:placeholder-pastelDarkBlack"
             }
           />
         </div>
