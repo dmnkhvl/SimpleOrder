@@ -1,7 +1,7 @@
 function Product({ name, price, amount, discount, onClick }) {
   return (
     <div className="mx-auto w-full">
-      <div className="mt-4 p-4 text-white border-2 border-pastelLightGray rounded-xl">
+      <div className="mt-4 p-4 text-white  bg-pastelDarkBlack rounded-xl">
         <div className=" flex flex-col">
           <div className="flex justify-between items-center">
             <div>
@@ -9,7 +9,7 @@ function Product({ name, price, amount, discount, onClick }) {
 
               {discount > 0 ? (
                 <div className="flex ">
-                  <p className="line-through text-pastelLightGray">
+                  <p className="line-through text-mdGray">
                     {Math.round(price * amount * 100) / 100}€
                   </p>
                   <p className="ml-2 text-white">

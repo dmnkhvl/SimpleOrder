@@ -89,12 +89,12 @@ function App() {
               totalDiscount={totalDiscount}
               total={total}
             />
-            <Summary
-              subtotal={subtotal}
-              totalDiscount={totalDiscount}
-              total={total}
-            />
           </div>
+          <Summary
+            subtotal={subtotal}
+            totalDiscount={totalDiscount}
+            total={total}
+          />
         </div>
       </div>
     </div>
