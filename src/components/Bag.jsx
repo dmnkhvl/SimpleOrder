@@ -21,7 +21,7 @@ function Bag({
           : "hidden"
       }
     >
-      <h1 className="font-medium text-xl border-lightGray">Bag</h1>
+      <h1 className="font-medium text-xl border-lightGray ml-2">Bag</h1>
       {products.map((product) => (
         <div className="flex flex-col">
           <Product
