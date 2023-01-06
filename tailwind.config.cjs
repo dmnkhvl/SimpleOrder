@@ -10,7 +10,7 @@ module.exports = {
         pastelGreen: "#E3F6FD",
         pastelPink: "#E8DEF5",
         pastelgray: "#F1F1F1",
-        pastelBlack: "#1E1E1E",
+        pastelBlack: "#0e263e",
 
         dark: "#1D1B1D",
         white: "#FEFEFE",
