@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Bag from "./components/Bag";
 import ProductForm from "./components/ProductForm";
 import Summary from "./components/Summary";
-import Navbar from "./components/Navbar";
 
 let id = 0;
 
@@ -62,7 +61,6 @@ function App() {
   return (
     <div className="App">
       <div className="bg-white text-black min-h-screen">
-        <Navbar />
         <div className="flex flex-col md:flex-row">
           <ProductForm
             handleClick={handleClick}
