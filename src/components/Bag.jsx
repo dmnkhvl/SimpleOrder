@@ -17,7 +17,7 @@ function Bag({
     <div
       className={
         products.length > 0
-          ? "mx-auto w-full p-6 max-w-screen-md bg-pastelBlack border-2 border-pastelGray rounded-2xl"
+          ? "mx-auto w-full p-6 max-w-screen-md bg-pastelBlack border-2 border-pastelGray rounded-2xl my-10"
           : "hidden"
       }
     >

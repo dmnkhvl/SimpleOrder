@@ -13,7 +13,7 @@ function ProductForm({
 }) {
   return (
     <div className="mx-auto w-full md:h-screen text-pastelBlack px-5 ">
-      <div className="max-w-screen-md bg-pastelDarkBlack rounded-2xl flex flex-col gap-y-5 items-start p-6 gap-2 mx-auto text-darkGray mb-10 ">
+      <div className="max-w-screen-md bg-pastelDarkBlack rounded-2xl flex flex-col gap-y-5 items-start p-6 gap-2 mx-auto text-darkGray">
         <div className="w-full">
           <input
             type="text"
