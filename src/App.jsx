@@ -61,7 +61,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="bg-pastelBlack text-black min-h-screen">
+      <div className="bg-pastelBlack text-white min-h-screen">
         <Header />
         <div className="flex flex-col md:flex-row">
           <ProductForm

@@ -1,3 +1,5 @@
+import { AiOutlinePlus } from "react-icons/ai";
+
 function ProductForm({
   handleClick,
   setDiscount,
@@ -10,9 +12,8 @@ function ProductForm({
   wrongPrice,
 }) {
   return (
-    <div className="mx-auto w-full md:h-screen  p-6 bg-pastelBlack text-white">
-      <div className="max-w-screen-md flex flex-col gap-y-5 items-start p-5 gap-2 mx-auto text-darkGray ">
-        <h1 className="font-medium text-2xl pb-4 text-white">New Product</h1>
+    <div className="mx-auto w-full md:h-screen text-pastelBlack px-5 ">
+      <div className="max-w-screen-md bg-pastelDarkBlack rounded-3xl shadow-sm flex flex-col gap-y-5 items-start p-6 gap-2 mx-auto text-darkGray mb-10 ">
         <div className="w-full">
           <input
             type="text"
@@ -24,7 +25,7 @@ function ProductForm({
             className={
               wrongName
                 ? "w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
-                : "bg-black text-white placeholder-white border-0 font-semibold text-lg"
+                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-white font-medium text-base w-full text-center rounded-xl py-3"
             }
             autoFocus
             maxLength={60}
@@ -40,7 +41,7 @@ function ProductForm({
             className={
               wrongPrice
                 ? "w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
-                : "bg-black text-white placeholder-white border-0 font-semibold text-lg"
+                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-white font-medium text-base w-full text-center rounded-xl py-3"
             }
             maxLength={10}
           />
@@ -55,7 +56,7 @@ function ProductForm({
             className={
               wrongAmount
                 ? "w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
-                : " bg-black text-white placeholder-white border-0 font-semibold text-lg"
+                : " bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-white font-medium text-base w-full text-center rounded-xl py-3"
             }
           />
         </div>
@@ -69,14 +70,15 @@ function ProductForm({
             className={
               wrongDiscount
                 ? "mt-2 w-full shadow-sm border-red bg-black text-white rounded-3xl ring-1 ring-red placeholder-red font-medium text-sm"
-                : "bg-black text-white placeholder-white border-0 font-semibold text-lg"
+                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-white font-medium text-base w-full text-center rounded-xl py-3"
             }
           />
         </div>
         <button
-          className="mt-10 px-10 py-2 font-medium w-full rounded-3xl bg-white text-black"
+          className=" px-10 py-3 mx-auto rounded-2xl bg-pastelBlack text-white flex items-center"
           onClick={handleClick}
         >
+          <AiOutlinePlus className="mr-2" />
           Create new product
         </button>
       </div>
