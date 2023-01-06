@@ -7,6 +7,11 @@ module.exports = {
         sans: ["Roboto", "sans-serif"],
       },
       colors: {
+        pastelGreen: "#E3F6FD",
+        pastelPink: "#E8DEF5",
+        pastelgray: "#F1F1F1",
+        pastelBlack: "#1E1E1E",
+
         dark: "#1D1B1D",
         white: "#FEFEFE",
         black: "#111111",
