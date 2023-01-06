@@ -75,7 +75,7 @@ function App() {
             wrongDiscount={wrongDiscount}
             wrongPrice={wrongPrice}
           />
-          <div className="md:flex md:flex-col md:w-1/2 md:mt-6">
+          <div className="md:flex md:flex-col md:w-1/2 md:mt-6 p-6">
             <Bag
               products={products}
               setProducts={setProducts}

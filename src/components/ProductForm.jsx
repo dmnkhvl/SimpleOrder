@@ -13,7 +13,7 @@ function ProductForm({
 }) {
   return (
     <div className="mx-auto w-full md:h-screen text-pastelBlack px-5 ">
-      <div className="max-w-screen-md bg-pastelDarkBlack rounded-3xl shadow-sm flex flex-col gap-y-5 items-start p-6 gap-2 mx-auto text-darkGray mb-10 ">
+      <div className="max-w-screen-md bg-pastelDarkBlack rounded-2xl flex flex-col gap-y-5 items-start p-6 gap-2 mx-auto text-darkGray mb-10 ">
         <div className="w-full">
           <input
             type="text"
@@ -25,10 +25,10 @@ function ProductForm({
             className={
               wrongName
                 ? "bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
-                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 caret-pastelLightGray focus:placeholder-pastelDarkBlack"
+                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
             }
             autoFocus
-            maxLength={60}
+            maxLength={20}
           />
         </div>
 
@@ -37,11 +37,11 @@ function ProductForm({
             type="number"
             id="price"
             onChange={(e) => setPrice(e.target.value)}
-            placeholder={wrongPrice ? "Invalid value" : "0€"}
+            placeholder={wrongPrice ? "Invalid price" : "0€"}
             className={
               wrongPrice
                 ? "bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
-                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 caret-pastelLightGray focus:placeholder-pastelDarkBlack"
+                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
             }
             maxLength={10}
           />
@@ -52,11 +52,11 @@ function ProductForm({
             type="number"
             id="amount"
             onChange={(e) => setAmount(e.target.value)}
-            placeholder={wrongAmount ? "Invalid value" : "0"}
+            placeholder={wrongAmount ? "Invalid amount" : "0 pcs"}
             className={
               wrongAmount
                 ? "bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
-                : " bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 caret-pastelLightGray focus:placeholder-pastelDarkBlack"
+                : " bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
             }
           />
         </div>
@@ -66,11 +66,11 @@ function ProductForm({
             type="number"
             id="discount"
             onChange={(e) => setDiscount(e.target.value)}
-            placeholder={wrongDiscount ? "Invalid value" : "-0%"}
+            placeholder={wrongDiscount ? "Invalid discount value" : "-0%"}
             className={
               wrongDiscount
                 ? "mt-2 bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
-                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 caret-pastelLightGray focus:placeholder-pastelDarkBlack"
+                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
             }
           />
         </div>

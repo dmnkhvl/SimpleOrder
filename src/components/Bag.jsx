@@ -17,13 +17,11 @@ function Bag({
     <div
       className={
         products.length > 0
-          ? "mx-auto w-full p-6 max-w-screen-md bg-white"
+          ? "mx-auto w-full p-6 max-w-screen-md bg-pastelBlack border-2 border-pastelGray rounded-2xl"
           : "hidden"
       }
     >
-      <h1 className="font-medium text-2xl pb-4 border-b border-lightGray">
-        Bag
-      </h1>
+      <h1 className="font-medium text-xl border-lightGray">Bag</h1>
       {products.map((product) => (
         <div className="flex flex-col">
           <Product
