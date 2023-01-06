@@ -1,6 +1,6 @@
 function Summary({ subtotal, totalDiscount, total }) {
   return (
-    <div className="mx-auto w-full p-6 max-w-screen-md">
+    <div className="mx-auto w-full p-6 max-w-screen-md bg-white">
       <h1 className="font-medium text-2xl">Summary</h1>
       <div className="flex items-center justify-between mt-2">
         <div className="flex items-center">

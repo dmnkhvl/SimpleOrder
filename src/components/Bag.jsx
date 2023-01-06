@@ -16,7 +16,9 @@ function Bag({
   return (
     <div
       className={
-        products.length > 0 ? "mx-auto w-full p-6 max-w-screen-md" : "hidden"
+        products.length > 0
+          ? "mx-auto w-full p-6 max-w-screen-md bg-white"
+          : "hidden"
       }
     >
       <h1 className="font-medium text-2xl pb-4 border-b border-lightGray">

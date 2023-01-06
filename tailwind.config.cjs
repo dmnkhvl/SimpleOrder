@@ -7,10 +7,10 @@ module.exports = {
         sans: ["Lato", "sans-serif"],
       },
       colors: {
-        pastelGreen: "#E3F6FD",
-        pastelPink: "#E8DEF5",
+        pastelGreen: "#E8F7FD",
+        pastelPink: "#EBE2F6",
         pastelgray: "#F1F1F1",
-        pastelBlack: "#0e263e",
+        pastelBlack: "#030303",
 
         dark: "#1D1B1D",
         white: "#FEFEFE",

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 // components
 import Bag from "./components/Bag";
-import Header from "./components/header";
+import Header from "./components/Header";
 import ProductForm from "./components/ProductForm";
 import Summary from "./components/Summary";
 
@@ -61,7 +61,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="bg-white text-black min-h-screen">
+      <div className="bg-pastelBlack text-black min-h-screen">
         <Header />
         <div className="flex flex-col md:flex-row">
           <ProductForm

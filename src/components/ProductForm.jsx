@@ -10,7 +10,7 @@ function ProductForm({
   wrongPrice,
 }) {
   return (
-    <div className="mx-auto w-full md:h-screen  p-6 bg-black text-white">
+    <div className="mx-auto w-full md:h-screen  p-6 bg-pastelBlack text-white">
       <div className="max-w-screen-md flex flex-col gap-y-5 items-start p-5 gap-2 mx-auto text-darkGray ">
         <h1 className="font-medium text-2xl pb-4 text-white">New Product</h1>
         <div className="w-full">
