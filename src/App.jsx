@@ -90,12 +90,13 @@ function App() {
               total={total}
             />
           </div>
-          <Summary
-            subtotal={subtotal}
-            totalDiscount={totalDiscount}
-            total={total}
-          />
         </div>
+        <Summary
+          subtotal={subtotal}
+          totalDiscount={totalDiscount}
+          total={total}
+          products={products}
+        />
       </div>
     </div>
   );

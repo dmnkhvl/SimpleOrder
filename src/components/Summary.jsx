@@ -1,6 +1,12 @@
-function Summary({ subtotal, totalDiscount, total }) {
+function Summary({ subtotal, totalDiscount, total, products }) {
   return (
-    <div className="absolute bottom-0 mx-auto w-full p-6 max-w-screen-md  rounded-t-2xl bg-pastelDarkBlack">
+    <div
+      className={
+        products.length > 0
+          ? "absolute bottom-0 mx-auto w-full p-6 max-w-screen-md  rounded-t-2xl bg-pastelDarkBlack"
+          : "hidden"
+      }
+    >
       <h1 className="font-medium text-xl">Summary</h1>
       <div className="flex items-center justify-between mt-2">
         <div className="flex items-center">
