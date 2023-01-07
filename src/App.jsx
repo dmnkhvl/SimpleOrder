@@ -61,9 +61,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className="bg-pastelBlack text-white min-h-screen">
+      <div className="bg-pastelBlack text-white min-h-screen ">
         <Header />
-        <div className="flex flex-col">
+        <div className="flex flex-col max-w-screen-lg mx-auto">
           <ProductForm
             handleClick={handleClick}
             setDiscount={setDiscount}
@@ -75,7 +75,7 @@ function App() {
             wrongDiscount={wrongDiscount}
             wrongPrice={wrongPrice}
           />
-          <div className="md:flex md:items-start md:gap-x-10 p-6 md:mt-10">
+          <div className="sm:flex sm:items-start sm:gap-x-10 p-6 sm:mt-10">
             <Bag
               products={products}
               setProducts={setProducts}
