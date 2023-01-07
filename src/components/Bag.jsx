@@ -27,9 +27,9 @@ function Bag({
           <Product
             key={product.id}
             name={product.name}
-            price={product.price}
+            pricePerOne={product.price}
             amount={product.amount}
-            discount={product.discount}
+            discountPercentage={product.discount}
             onClick={() => {
               setProducts(products.filter((p) => p.id !== product.id));
               setSubtotal(
