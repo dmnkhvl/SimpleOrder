@@ -4,7 +4,7 @@
 
 Single page application which replicates shopping cart, created to practice React state.
 
-As a user, u can create products that will be automatically added to your Bag and you can see summary of your Order.
+As a user, u can create products that will be automatically added to your Bag and you can see summary of your order.
 
 The app is publicly available on [order.dmnkhvl.eu](https://order.dmnkhvl.eu/)
 
