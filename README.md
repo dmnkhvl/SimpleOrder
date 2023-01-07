@@ -11,7 +11,7 @@ The app is publicly available on [order.dmnkhvl.eu](https://order.dmnkhvl.eu/)
 ## Technologies
 
 This app was build with JavaScript library [React](https://reactjs.org/) .
-I used [Tailwind CSS](https://tailwindcss.com/) for styles.
+and [Tailwind CSS](https://tailwindcss.com/) for styles.
 
 ## First time installation
 
