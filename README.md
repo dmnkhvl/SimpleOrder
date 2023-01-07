@@ -1,4 +1,4 @@
-# Order.me
+# SimpleOrder
 
 SPA, that allows user to create products, add them to shopping cart and see the total of the "order".
 
