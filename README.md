@@ -1,10 +1,17 @@
 # SimpleOrder
 
-SPA, that allows user to create products, add them to shopping cart and see the total of the "order".
+## About
 
-Build with [React](https://reactjs.org/) and [Tailwind CSS](https://tailwindcss.com/).
+Single page application which replicates shopping cart, created to practice React state.
+
+As a user, u can create products that will be automatically added to your Bag and you can see summary of your Order.
 
 The app is publicly available on [order.dmnkhvl.eu](https://order.dmnkhvl.eu/)
+
+## Technologies
+
+This app was build with JavaScript library [React](https://reactjs.org/) .
+I used [Tailwind CSS](https://tailwindcss.com/) for styles.
 
 ## First time installation
 
@@ -12,20 +19,24 @@ The app is publicly available on [order.dmnkhvl.eu](https://order.dmnkhvl.eu/)
 
 #### Install all packages from `package.json` locally
 
-    npm install
+npm install
 
 ### Development
 
-    npm run dev
+npm run dev
 
 Runs the app in the development mode.
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
 The page will reload when you make changes.
 
 ### Build
 
-    npm run build
+npm run build
 
 Builds the app to the `build` folder.
+
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
 The build is minified and the filenames include the hashes.
