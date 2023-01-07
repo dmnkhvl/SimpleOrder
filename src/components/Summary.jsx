@@ -3,7 +3,7 @@ function Summary({ subtotal, totalDiscount, total, products }) {
     <div
       className={
         products.length > 0
-          ? "absolute bottom-0 mx-auto w-full p-6 max-w-screen-md  rounded-t-2xl bg-pastelDarkBlack"
+          ? "mx-auto w-full p-6 max-w-screen-md  rounded-2xl bg-pastelDarkBlack"
           : "hidden"
       }
     >
