@@ -9,9 +9,9 @@ function Summary({ subtotal, totalDiscount, total, products }) {
     >
       <h1 className="font-medium text-xl">Summary</h1>
       <div className="flex items-center justify-between mt-2">
-        <div className="flex items-center">
-          <p className="text-mdGray">Subtotal</p>
-          <p className="text-xs font-normal ml-2 text-mdGray">w/o VAT</p>
+        <div className="flex items-end">
+          <p className="leading-4	 text-mdGray">Subtotal</p>
+          <p className="text-xs leading-3	 ml-2 text-mdGray">w/o VAT</p>
         </div>
         <p className="text-mdGray">{subtotal}€</p>
       </div>
