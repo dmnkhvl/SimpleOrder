@@ -63,7 +63,7 @@ function App() {
     <div className="App">
       <div className="bg-pastelBlack text-white min-h-screen">
         <Header />
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col">
           <ProductForm
             handleClick={handleClick}
             setDiscount={setDiscount}
@@ -75,7 +75,7 @@ function App() {
             wrongDiscount={wrongDiscount}
             wrongPrice={wrongPrice}
           />
-          <div className="md:flex md:flex-col md:w-1/2 md:mt-6 p-6">
+          <div className="md:flex md:items-start md:gap-x-10 p-6 md:mt-10">
             <Bag
               products={products}
               setProducts={setProducts}

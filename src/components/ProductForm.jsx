@@ -12,8 +12,8 @@ function ProductForm({
   wrongPrice,
 }) {
   return (
-    <div className="mx-auto w-full md:h-screen text-pastelBlack px-5 ">
-      <div className="max-w-screen-md bg-pastelDarkBlack rounded-2xl flex flex-col gap-y-5 items-start p-6 gap-2 mx-auto text-darkGray">
+    <div className="mx-auto w-full text-pastelBlack px-5 ">
+      <div className="max-w-md md:bg-pastelBlack md:border md:border-pastelLightGray bg-pastelDarkBlack rounded-2xl flex flex-col gap-y-5 items-start p-6 gap-2 mx-auto text-darkGray">
         <div className="w-full">
           <input
             type="text"
@@ -25,7 +25,7 @@ function ProductForm({
             className={
               wrongName
                 ? "bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
-                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
+                : "md:bg-pastelBlack bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
             }
             autoFocus
             maxLength={20}
@@ -41,7 +41,7 @@ function ProductForm({
             className={
               wrongPrice
                 ? "bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
-                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
+                : "md:bg-pastelBlack bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
             }
             maxLength={10}
           />
@@ -56,7 +56,7 @@ function ProductForm({
             className={
               wrongAmount
                 ? "bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
-                : " bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
+                : " md:bg-pastelBlack bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
             }
           />
         </div>
@@ -70,12 +70,12 @@ function ProductForm({
             className={
               wrongDiscount
                 ? "mt-2 bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
-                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
+                : "md:bg-pastelBlack bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
             }
           />
         </div>
         <button
-          className=" px-10 py-3 mx-auto rounded-2xl bg-pastelBlack text-white flex items-center"
+          className="md:border md:text-md md:border-pastelLightGray px-10 py-3 mx-auto rounded-2xl bg-pastelBlack text-white flex items-center"
           onClick={handleClick}
         >
           <AiOutlinePlus className="mr-2" />
