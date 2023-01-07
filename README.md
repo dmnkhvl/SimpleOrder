@@ -12,7 +12,7 @@ The app is publicly available on [order.dmnkhvl.eu](https://order.dmnkhvl.eu/)
 
 This app was build with JavaScript library [React](https://reactjs.org/) and [Tailwind CSS](https://tailwindcss.com/) for styles.
 
-## First time installation
+## How to install the app on your machine
 
 ### Install latest [Node.js](https://nodejs.org/en/)
 
