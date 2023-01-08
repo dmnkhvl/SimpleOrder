@@ -24,7 +24,7 @@ function Product({
                 <div className="flex ">
                   <p className="line-through text-mdGray">{pricePerPiece}€</p>
                   <p className="ml-2 text-mdGray">
-                    {discountedPricePerPiece} €
+                    {discountedPricePerPiece.toFixed(2)} €
                   </p>
                 </div>
               ) : (
@@ -34,7 +34,7 @@ function Product({
             <p className="font-bold text-lg text-white">{numberOfPieces}x</p>
           </div>
           <div className="flex items-center justify-between mt-2">
-            <p>{totalProductPrice} €</p>
+            <p>{totalProductPrice.toFixed(2)} €</p>
             <button
               onClick={onClick}
               className="px-3 py-1 text-sm rounded-2xl bg-pastelLightGray"
