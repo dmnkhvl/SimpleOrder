@@ -55,10 +55,10 @@ function Bag({
 
               setTotal(
                 total -
-                  product.pricePerPiece * product.numberOfPieces -
-                  product.pricePerPiece *
-                    product.numberOfPieces *
-                    (product.discountPercentage / 100)
+                  (product.pricePerPiece * product.numberOfPieces -
+                    product.pricePerPiece *
+                      product.numberOfPieces *
+                      (product.discountPercentage / 100))
               );
             }}
           />
