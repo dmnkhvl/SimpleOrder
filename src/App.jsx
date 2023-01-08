@@ -17,6 +17,8 @@ function App() {
   const [subtotal, setSubtotal] = useState(0);
   const [totalDiscount, setTotalDiscount] = useState(0);
   const [total, setTotal] = useState(0);
+
+  // error handling
   const [wrongName, setWrongName] = useState(false);
   const [wrongPrice, setWrongPrice] = useState(false);
   const [wrongAmount, setWrongAmount] = useState(false);
