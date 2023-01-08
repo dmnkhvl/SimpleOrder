@@ -1,4 +1,4 @@
-function Summary({ subtotal, totalDiscount, total, products }) {
+function Summary({ products, total, subtotal, totalDiscount }) {
   return (
     <div
       className={
@@ -21,9 +21,7 @@ function Summary({ subtotal, totalDiscount, total, products }) {
       </div>
       <div className="flex items-center justify-between mt-4">
         <p className="font-medium text-lg">Total</p>
-        <p className="font-medium text-lg text-speci">
-          {Math.round(total * 100) / 100}€
-        </p>
+        <p className="font-medium text-lg text-speci">{total} €</p>
       </div>
     </div>
   );

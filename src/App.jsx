@@ -21,8 +21,6 @@ function App() {
   const [subtotal, setSubtotal] = useState(0);
   const [total, setTotal] = useState(0);
   const [totalDiscount, setTotalDiscount] = useState(0);
-  const [priceWithoutDiscount, setPriceWithoutDiscount] = useState(0);
-  const [discount, setDiscount] = useState(0);
 
   // error handling
   const [wrongName, setWrongName] = useState(false);
@@ -57,13 +55,20 @@ function App() {
       setWrongAmount(false);
       setWrongDiscount(false);
 
-      setPriceWithoutDiscount(pricePerPiece * numberOfPieces);
-      setDiscount(discountPercentage / 100);
-      setTotalDiscount(
-        (totalDiscount + priceWithoutDiscount - discount).toFixed(2)
+      setSubtotal(
+        subtotal +
+          (pricePerPiece - (discountPercentage / 100) * numberOfPieces) / dph
       );
-      setTotal((total + priceWithoutDiscount - totalDiscount).toFixed(2));
-      setSubtotal((subtotal + total / dph).toFixed(2));
+      setTotalDiscount(
+        totalDiscount +
+          pricePerPiece * (discountPercentage / 100) * numberOfPieces
+      );
+
+      setTotal(
+        total +
+          pricePerPiece * numberOfPieces -
+          pricePerPiece * numberOfPieces * (discountPercentage / 100)
+      );
     }
   };
 
@@ -84,7 +89,17 @@ function App() {
             wrongPrice={wrongPrice}
           />
           <div className="sm:flex sm:items-start sm:gap-x-10 p-6 sm:mt-10">
-            <Bag products={products} discount={discount} />
+            <Bag
+              products={products}
+              total={total}
+              subtotal={subtotal}
+              totalDiscount={totalDiscount}
+              dph={dph}
+              setProducts={setProducts}
+              setTotal={setTotal}
+              setSubtotal={setSubtotal}
+              setTotalDiscount={setTotalDiscount}
+            />
             <Summary
               products={products}
               total={total}

@@ -2,27 +2,15 @@ import Product from "./Product";
 
 function Bag({
   products,
+  total,
+  subtotal,
+  totalDiscount,
+  dph,
   setProducts,
+  setTotal,
   setSubtotal,
   setTotalDiscount,
-  setTotal,
-  subtotal,
-  pricePerPiece,
-  discountPercentage,
-  amount,
-  totalDiscount,
-  total,
-  discount,
-  priceWithoutDiscount,
 }) {
-  const onClick = () => {
-    setProducts(products.filter((p) => p.id !== product.id));
-    setTotalDiscount(
-      (totalDiscount - priceWithoutDiscount - discount).toFixed(2)
-    );
-    setTotal((total - priceWithoutDiscount - totalDiscount).toFixed(2));
-    setSubtotal((subtotal - total / dph).toFixed(2));
-  };
   return (
     <div
       className={
@@ -48,10 +36,31 @@ function Bag({
             name={product.name}
             pricePerPiece={product.pricePerPiece}
             numberOfPieces={product.numberOfPieces}
-            discount={discount}
-            onClick={() => onClick}
-            priceWithoutDiscount={priceWithoutDiscount}
-            totalDiscount={totalDiscount}
+            discountPercentage={product.discountPercentage}
+            onClick={() => {
+              setProducts(products.filter((p) => p.id !== product.id));
+              setSubtotal(
+                subtotal -
+                  (product.pricePerPiece -
+                    (product.discountPercentage / 100) *
+                      product.numberOfPieces) /
+                    dph
+              );
+              setTotalDiscount(
+                totalDiscount -
+                  product.pricePerPiece *
+                    (product.discountPercentage / 100) *
+                    product.numberOfPieces
+              );
+
+              setTotal(
+                total -
+                  product.pricePerPiece * product.numberOfPieces -
+                  product.pricePerPiece *
+                    product.numberOfPieces *
+                    (product.discountPercentage / 100)
+              );
+            }}
           />
         </div>
       ))}
