@@ -2,9 +2,9 @@ import { AiOutlinePlus } from "react-icons/ai";
 
 function ProductForm({
   handleClick,
-  setDiscount,
-  setAmount,
-  setPrice,
+  setDiscountPercentage,
+  setNumberOfPieces,
+  setPricePerPiece,
   setName,
   wrongName,
   wrongAmount,
@@ -36,7 +36,7 @@ function ProductForm({
           <input
             type="number"
             id="price"
-            onChange={(e) => setPrice(e.target.value)}
+            onChange={(e) => setPricePerPiece(e.target.value)}
             placeholder={wrongPrice ? "Invalid price" : "0€"}
             className={
               wrongPrice
@@ -51,7 +51,7 @@ function ProductForm({
           <input
             type="number"
             id="amount"
-            onChange={(e) => setAmount(e.target.value)}
+            onChange={(e) => setNumberOfPieces(e.target.value)}
             placeholder={wrongAmount ? "Invalid amount" : "0 pcs"}
             className={
               wrongAmount
@@ -66,7 +66,7 @@ function ProductForm({
           <input
             type="number"
             id="discount"
-            onChange={(e) => setDiscount(e.target.value)}
+            onChange={(e) => setDiscountPercentage(e.target.value)}
             placeholder={wrongDiscount ? "Invalid discount value" : "-0%"}
             className={
               wrongDiscount

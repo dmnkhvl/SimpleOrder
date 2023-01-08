@@ -7,12 +7,22 @@ function Bag({
   setTotalDiscount,
   setTotal,
   subtotal,
-  price,
-  discount,
+  pricePerPiece,
+  discountPercentage,
   amount,
   totalDiscount,
   total,
+  discount,
+  priceWithoutDiscount,
 }) {
+  const onClick = () => {
+    setProducts(products.filter((p) => p.id !== product.id));
+    setTotalDiscount(
+      (totalDiscount - priceWithoutDiscount - discount).toFixed(2)
+    );
+    setTotal((total - priceWithoutDiscount - totalDiscount).toFixed(2));
+    setSubtotal((subtotal - total / dph).toFixed(2));
+  };
   return (
     <div
       className={
@@ -27,23 +37,12 @@ function Bag({
           <Product
             key={product.id}
             name={product.name}
-            pricePerOne={product.price}
-            amount={product.amount}
-            discountPercentage={product.discount}
-            onClick={() => {
-              setProducts(products.filter((p) => p.id !== product.id));
-              setSubtotal(
-                Math.round(
-                  subtotal - ((price - (discount / 100) * 100) * amount) / 1.2
-                )
-              );
-              setTotalDiscount(
-                Math.round(totalDiscount - price * (discount / 100) * amount)
-              );
-              setTotal(
-                Math.round(total - price * amount * ((100 - discount) / 100))
-              );
-            }}
+            pricePerPiece={product.pricePerPiece}
+            numberOfPieces={product.numberOfPieces}
+            discount={discount}
+            onClick={() => onClick}
+            priceWithoutDiscount={priceWithoutDiscount}
+            totalDiscount={totalDiscount}
           />
         </div>
       ))}

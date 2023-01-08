@@ -1,9 +1,12 @@
-function Product({ name, pricePerOne, amount, discountPercentage, onClick }) {
-  const price = pricePerOne * amount;
-  const discount = discountPercentage / 100;
-  const discountedPrice = price - price * discount;
-  const discountedPricePerOne = pricePerOne - pricePerOne * discount;
-
+function Product({
+  name,
+  pricePerPiece,
+  numberOfPieces,
+  discountPercentage,
+  onClick,
+  priceWithoutDiscount,
+  totalDiscount,
+}) {
   return (
     <div className="mx-auto w-full">
       <div className="mt-4 p-4 text-white border border-pastelLightGray rounded-xl">
@@ -12,21 +15,20 @@ function Product({ name, pricePerOne, amount, discountPercentage, onClick }) {
             <div>
               <p className="font-base text-lg text-white">{name}</p>
 
-              {discountPercentage > 0 ? (
+              {discount > 0 ? (
                 <div className="flex ">
-                  <p className="line-through text-mdGray">{pricePerOne}€</p>
-                  <p className="ml-2 text-mdGray">
-                    {discountedPricePerOne.toFixed(2)}€
-                  </p>
+                  <p className="line-through text-mdGray">{pricePerPiece}€</p>
+                  <p className="ml-2 text-mdGray">€</p>
                 </div>
               ) : (
-                <p className="text-mdGray">{price.toFixed(2)}€</p>
+                <p className="text-mdGray">{pricePerPiece}€</p>
               )}
             </div>
-            <p className="font-bold text-lg text-white">{amount}x</p>
+            <p className="font-bold text-lg text-white">{numberOfPieces}x</p>
           </div>
           <div className="flex items-center justify-between mt-2">
-            <p>{discountedPrice.toFixed(2)}€</p>
+            <p>{priceWithoutDiscount - totalDiscount}€</p>
+            <p>{totalDiscount}</p>
             <button
               onClick={onClick}
               className="px-3 py-1 text-sm rounded-2xl bg-pastelLightGray"

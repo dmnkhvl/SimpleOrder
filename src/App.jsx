@@ -7,16 +7,22 @@ import ProductForm from "./components/ProductForm";
 import Summary from "./components/Summary";
 
 let id = 0;
+const dph = 1.2;
 
 function App() {
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState(0);
-  const [amount, setAmount] = useState(0);
-  const [discount, setDiscount] = useState(0);
   const [products, setProducts] = useState([]);
+  // user inputs
+  const [name, setName] = useState("");
+  const [pricePerPiece, setPricePerPiece] = useState(0);
+  const [numberOfPieces, setNumberOfPieces] = useState(0);
+  const [discountPercentage, setDiscountPercentage] = useState(0);
+
+  // variables
   const [subtotal, setSubtotal] = useState(0);
-  const [totalDiscount, setTotalDiscount] = useState(0);
   const [total, setTotal] = useState(0);
+  const [totalDiscount, setTotalDiscount] = useState(0);
+  const [priceWithoutDiscount, setPriceWithoutDiscount] = useState(0);
+  const [discount, setDiscount] = useState(0);
 
   // error handling
   const [wrongName, setWrongName] = useState(false);
@@ -28,12 +34,12 @@ function App() {
     if (name.length == 0) {
       setWrongName(true);
     }
-    if (price <= 0) {
+    if (pricePerPiece <= 0) {
       setWrongPrice(true);
     }
-    if (amount <= 0) {
+    if (numberOfPieces <= 0) {
       setWrongAmount(true);
-    } else if (discount < 0 || discount > 100) {
+    } else if (discountPercentage < 0 || discountPercentage > 100) {
       setWrongDiscount(true);
     } else {
       setProducts([
@@ -41,24 +47,24 @@ function App() {
         {
           id: id++,
           name: name,
-          price: price,
-          amount: amount,
-          discount: discount,
+          pricePerPiece: pricePerPiece,
+          numberOfPieces: numberOfPieces,
+          discountPercentage: discountPercentage,
         },
       ]);
       setWrongName(false);
       setWrongPrice(false);
       setWrongAmount(false);
       setWrongDiscount(false);
-      setSubtotal(
-        Math.round(subtotal + ((price - (discount / 100) * 100) * amount) / 1.2)
-      );
-    }
-    setTotalDiscount(
-      Math.round(totalDiscount + price * (discount / 100) * amount)
-    );
 
-    setTotal(Math.round(total + price * amount * ((100 - discount) / 100)));
+      setPriceWithoutDiscount(pricePerPiece * numberOfPieces);
+      setDiscount(discountPercentage / 100);
+      setTotalDiscount(
+        (totalDiscount + priceWithoutDiscount - discount).toFixed(2)
+      );
+      setTotal((total + priceWithoutDiscount - totalDiscount).toFixed(2));
+      setSubtotal((subtotal + total / dph).toFixed(2));
+    }
   };
 
   return (
@@ -68,10 +74,10 @@ function App() {
         <div className="flex flex-col max-w-screen-lg mx-auto">
           <ProductForm
             handleClick={handleClick}
-            setDiscount={setDiscount}
+            setDiscountPercentage={setDiscountPercentage}
             setName={setName}
-            setAmount={setAmount}
-            setPrice={setPrice}
+            setNumberOfPieces={setNumberOfPieces}
+            setPricePerPiece={setPricePerPiece}
             wrongName={wrongName}
             wrongAmount={wrongAmount}
             wrongDiscount={wrongDiscount}
@@ -85,11 +91,14 @@ function App() {
               setTotalDiscount={setTotalDiscount}
               setTotal={setTotal}
               subtotal={subtotal}
-              price={price}
-              discount={discount}
-              amount={amount}
+              pricePerPiece={pricePerPiece}
+              discountPercentage={discountPercentage}
+              numberOfPieces={numberOfPieces}
               totalDiscount={totalDiscount}
               total={total}
+              dph={dph}
+              priceWithoutDiscount={priceWithoutDiscount}
+              discount={discount}
             />
             <Summary
               subtotal={subtotal}
