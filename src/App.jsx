@@ -66,8 +66,8 @@ function App() {
 
       setTotal(
         total +
-          pricePerPiece * numberOfPieces -
-          pricePerPiece * numberOfPieces * (discountPercentage / 100)
+          (pricePerPiece * numberOfPieces -
+            pricePerPiece * numberOfPieces * (discountPercentage / 100))
       );
     }
   };
