@@ -25,7 +25,7 @@ function ProductForm({
             className={
               wrongName
                 ? "bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
-                : " bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
+                : " bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0  caret-white"
             }
             autoFocus
             maxLength={20}
@@ -41,7 +41,7 @@ function ProductForm({
             className={
               wrongPrice
                 ? "bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
-                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
+                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0  caret-white"
             }
             step="1"
           />
@@ -56,7 +56,7 @@ function ProductForm({
             className={
               wrongAmount
                 ? "bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
-                : " bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
+                : " bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0  caret-white"
             }
             step="1"
           />
@@ -71,7 +71,7 @@ function ProductForm({
             className={
               wrongDiscount
                 ? "mt-2 bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
-                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
+                : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0  caret-white"
             }
             step="1"
           />
