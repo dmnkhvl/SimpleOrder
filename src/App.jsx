@@ -57,7 +57,9 @@ function App() {
 
       setSubtotal(
         subtotal +
-          (pricePerPiece - (discountPercentage / 100) * numberOfPieces) / dph
+          (pricePerPiece * numberOfPieces -
+            pricePerPiece * numberOfPieces * (discountPercentage / 100)) /
+            dph
       );
       setTotalDiscount(
         totalDiscount +
