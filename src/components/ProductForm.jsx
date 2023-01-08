@@ -43,7 +43,7 @@ function ProductForm({
                 ? "bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
                 : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
             }
-            maxLength={10}
+            step="1"
           />
         </div>
 
@@ -58,6 +58,7 @@ function ProductForm({
                 ? "bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
                 : " bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
             }
+            step="1"
           />
         </div>
 
@@ -72,6 +73,7 @@ function ProductForm({
                 ? "mt-2 bg-pastelDarkBlack border-1 border-white text-white placeholder-white font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
                 : "bg-pastelDarkBlack border-1 border-pastelGray text-white placeholder-pastelLightGray font-base text-base w-full text-center rounded-xl py-3 focus:border-white focus:ring-0 focus:placeholder-pastelDarkBlack"
             }
+            step="1"
           />
         </div>
         <button
