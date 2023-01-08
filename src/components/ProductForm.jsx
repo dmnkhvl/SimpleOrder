@@ -77,7 +77,7 @@ function ProductForm({
           />
         </div>
         <button
-          className=" px-10 py-3 mx-auto rounded-2xl bg-pastelBlack text-white flex items-center"
+          className=" px-10 py-3 mx-auto rounded-2xl bg-pastelBlack text-white flex items-center hover:bg-pastelLightGray transition delay-75"
           onClick={handleClick}
         >
           <AiOutlinePlus className="mr-2" />
