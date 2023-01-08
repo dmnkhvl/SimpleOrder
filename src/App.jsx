@@ -74,8 +74,8 @@ function App() {
         <div className="flex flex-col max-w-screen-lg mx-auto">
           <ProductForm
             handleClick={handleClick}
-            setDiscountPercentage={setDiscountPercentage}
             setName={setName}
+            setDiscountPercentage={setDiscountPercentage}
             setNumberOfPieces={setNumberOfPieces}
             setPricePerPiece={setPricePerPiece}
             wrongName={wrongName}

@@ -31,7 +31,16 @@ function Bag({
           : "hidden"
       }
     >
-      <h1 className="font-medium text-xl border-lightGray ml-2">Bag</h1>
+      <div
+        className={
+          products.length > 0
+            ? "flex justify-between items-end px-1"
+            : "flex justify-start items-end px-1"
+        }
+      >
+        <h1 className="font-medium text-xl border-lightGray ml-2">Bag</h1>
+        <p className={products.length > 0 ? "" : "hidden"}>{products.length}</p>
+      </div>
       {products.map((product) => (
         <div className="flex flex-col">
           <Product
