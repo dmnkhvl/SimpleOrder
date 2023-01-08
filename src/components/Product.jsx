@@ -2,11 +2,16 @@ function Product({
   name,
   pricePerPiece,
   numberOfPieces,
-  discountPercentage,
   onClick,
-  priceWithoutDiscount,
-  totalDiscount,
+  discountPercentage,
 }) {
+  const discountedPricePerPiece =
+    pricePerPiece - pricePerPiece * (discountPercentage / 100);
+
+  const totalProductPrice =
+    pricePerPiece * numberOfPieces -
+    pricePerPiece * numberOfPieces * (discountPercentage / 100);
+
   return (
     <div className="mx-auto w-full">
       <div className="mt-4 p-4 text-white border border-pastelLightGray rounded-xl">
@@ -15,10 +20,12 @@ function Product({
             <div>
               <p className="font-base text-lg text-white">{name}</p>
 
-              {discount > 0 ? (
+              {discountPercentage > 0 ? (
                 <div className="flex ">
                   <p className="line-through text-mdGray">{pricePerPiece}€</p>
-                  <p className="ml-2 text-mdGray">€</p>
+                  <p className="ml-2 text-mdGray">
+                    {discountedPricePerPiece} €
+                  </p>
                 </div>
               ) : (
                 <p className="text-mdGray">{pricePerPiece}€</p>
@@ -27,8 +34,7 @@ function Product({
             <p className="font-bold text-lg text-white">{numberOfPieces}x</p>
           </div>
           <div className="flex items-center justify-between mt-2">
-            <p>{priceWithoutDiscount - totalDiscount}€</p>
-            <p>{totalDiscount}</p>
+            <p>{totalProductPrice} €</p>
             <button
               onClick={onClick}
               className="px-3 py-1 text-sm rounded-2xl bg-pastelLightGray"

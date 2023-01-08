@@ -84,27 +84,12 @@ function App() {
             wrongPrice={wrongPrice}
           />
           <div className="sm:flex sm:items-start sm:gap-x-10 p-6 sm:mt-10">
-            <Bag
-              products={products}
-              setProducts={setProducts}
-              setSubtotal={setSubtotal}
-              setTotalDiscount={setTotalDiscount}
-              setTotal={setTotal}
-              subtotal={subtotal}
-              pricePerPiece={pricePerPiece}
-              discountPercentage={discountPercentage}
-              numberOfPieces={numberOfPieces}
-              totalDiscount={totalDiscount}
-              total={total}
-              dph={dph}
-              priceWithoutDiscount={priceWithoutDiscount}
-              discount={discount}
-            />
+            <Bag products={products} discount={discount} />
             <Summary
+              products={products}
+              total={total}
               subtotal={subtotal}
               totalDiscount={totalDiscount}
-              total={total}
-              products={products}
             />
           </div>
         </div>
